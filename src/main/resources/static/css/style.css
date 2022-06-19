@@ -61,6 +61,11 @@ body {
     left: 0;
 }
 
+#header img{
+    margin-left: -40px;
+
+}
+
 #navbar{
     display: flex;
     align-items: center;
@@ -144,18 +149,18 @@ body {
 
 
 /* 가로웹화면에서 햄버거, x 아이콘 안 보이게*/
-#tab {
+#tab{
     display: none;
     align-items: center;
 }
 
-#close {
+#close{
     display: none;
 }
 
 /* Home Page*/
 #hero{
-    background-image: url("img/hero.jpg");
+    background-image: url("/img/hero.jpg");
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -172,19 +177,19 @@ body {
 }
 
 #hero h1{
-    color: #088178;
+    color: #083c81;
 }
 
 #hero button{
-    background-image: url("img/button.png");
+    background-image: url("/img/button.png");
     background-color: transparent;
-    color: #088178;
+    color: #083c81;
     border: 0;
-    padding: 14px 80px 14px 65px;
+    padding: 14px 80px 14px 70px;
     background-repeat: no-repeat;
     cursor: pointer;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 /*New Product*/
@@ -239,7 +244,7 @@ body {
 
 #product1 .pro .des h4 {
     padding-top: 7px;
-    color: #088178;
+    color: #083c81;
     font-size: 15px;
     font-weight: 700;
 }
@@ -249,10 +254,10 @@ body {
     height: 40px;
     line-height: 40px;
     border-radius: 50px;
-    background-color: #e8f6ea;
+    background-color: #f7f3e7;
     font-weight: 500;
-    color: #088178;
-    border: 1px solid #cce7d0;
+    color: #083c81;
+    border: 1px solid #eae4d3;
     position: absolute;
     bottom: 20px;
     right: 10px;
@@ -320,7 +325,7 @@ footer .copyright{
 
 /* Single Product */
 #prodetails .single-pro-image{
-    width: 40%;
+    width: 50%;
     margin-right: 50px;
 
 }
@@ -374,11 +379,12 @@ footer .copyright{
     display: block;
     padding: 5px;
     margin-bottom: 10px;
+    height: 30px;
 
 }
 
 #prodetails .single-pro-details input{
-    width: 50px;
+    width: 40px;
     height: 47px;
     padding-left: 10px;
     font-size: 16px;
@@ -390,14 +396,204 @@ footer .copyright{
 }
 
 #prodetails .single-pro-details button{
-    background-color: #adadad;
+    background-color: #083c81;
     color: #fff;
-    width: 100px;
-    height: 47px;
     padding-left: 10px;
     font-size: 16px;
     margin-right: 10px;
+    /* border-radius: 30px; */
+    
+
 }
+
+#prodetails .single-pro-details .proBtn{
+    margin-top: 20px;
+}
+
+#prodetails .single-pro-details button .normal{
+    display: inline-block;
+
+}
+
+#prodetails .single-pro-details .proBtn .cart{
+    background-color: #606063;
+    width: 110px;
+    height: 50px;
+}
+
+#prodetails .single-pro-details .proBtn .buy{
+    background-color: #606063;
+    width: 100px;
+    height: 50px;
+}
+
+#prodetails .single-pro-details .proBtn .heart{
+    background-color: #606063;
+    width: 50px;
+    height: 50px;
+}
+
+#prodetails .single-pro-details .proBtn .heart{
+    font-size: 25px;
+}
+
+
+#prodetails2 h2{
+    text-align: center;
+}
+
+/* product 상세 페이지 location area */
+.location{
+    display: flex;
+}
+
+.location_item{
+    display: inline-block;
+    font-size: 12px;
+}
+
+.location_item:not(:last-of-type)::after{
+    content: '\203a'; /* 작은 > 아이콘 */
+    margin: 0 5px;
+    color: #606063;
+}
+
+.location_link{
+    text-decoration: none;
+    color: #606063;
+}
+
+.location_link:hover{
+    text-decoration: underline;
+}
+
+.location_link-active{
+    font-weight: 500;
+}
+
+
+
+
+/* Review Write */
+.review_write{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+
+}
+
+.review_write .review_write_form input{
+    width: 600px;
+    height: 280px;
+    font-size: 20px;
+    
+}
+
+.review_write .review_write_form .review_writing{
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #ddd;
+}
+
+.review_write_star_rating{
+    user-select: none;  
+    margin-top: 15px; 
+}
+
+.review_write_star_rating .star{
+    font-size: 30px;
+    color: #ff9800;
+    background-color: unset;
+    border: none;
+}
+
+.review_write_star_rating .star:hover{
+    cursor: pointer;
+}
+
+
+
+
+/* Review area*/
+#review h2{
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+#review .review_container{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    
+
+}
+
+#review .review_container.review_list{
+    display: flex;
+    width: 100%;
+}
+.review_nick{
+    font-size: 20px;
+
+}
+
+.review_p_info{
+    margin-top: 30px;
+    display: flex;
+} 
+
+.review_p_info1 img{
+    width: 70px;
+    display: flex;
+}
+
+.review_p_info2{
+    margin-left: 20px;
+    text-align: center;
+}
+
+.review_star_rating{
+    margin-top: 20px;
+    
+}
+
+.review_star i{
+    color: #f6cd17;
+
+}
+
+.review_text{
+    margin-top: 15px;
+}
+
+.review_photo{
+    margin-top: 15px;
+}
+
+.review_write_imgBtn{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+.review_write_applyBtn{
+    background-color: #083c81;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    font-weight: 600;
+}
+.review_write_cancleBtn{
+    width: 100px;
+    height: 30px;
+    background-color: #d1d1e0;
+
+}
+
+
+
 
 /* ar피팅 화면 */
 #arfit-logo{
@@ -421,13 +617,252 @@ footer .copyright{
     margin-top: 50px;
 }
 
+/* Login Page*/
+
+#login-area{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+}
+
+#login-area .contentBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+#login-area .contentBx .formBx{
+    
+}*/
+
+#login-area .contentBx .formBx h2{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #083c81;
+    letter-spacing: 1px;
+}
+
+#login-area .contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+#login-area .contentBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #222;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#login-area .contentBx .formBx .inputBx input{
+    width: 100%;
+    padding: 10px 10px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #083c81;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #222;
+    background: transparent;
+    /*
+    border-radius: 20px;
+    */
+}
+
+#login-area .contentBx .formBx .inputBx input[type="submit"]{
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#login-area .contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #0a4ba0;
+}
+
+#login-area .contentBx .formBx .remember{
+    margin-bottom: 10px;
+    color: #575757;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#login-area .contentBx .formBx .inputBx p{
+    color: #575757;
+}
+
+#login-area .contentBx .formBx .inputBx p a{
+    color: #083c81;
+}
+
+#login-area .contentBx .formBx h4{
+    color: #222;
+    text-align: center;
+    margin: 40px 0 10px;
+    font-weight: 500;
+}
+
+
+#login-area .contentBx .formBx .scl{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    width: 100%;
+ 
+}
+
+#login-area .contentBx .formBx .scl li{
+    list-style: none;
+    cursor: pointer;
+    justify-content: center;
+    
+}
+
+#login-area .contentBx .formBx .scl li img{
+    justify-content: center; 
+}
 
 
 
 
 
 
-/* Responsive Wed Settings (Tab) 
+/* Responsive Wed Settings (Tab) */
+@media (max-width:799px) {
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #dcc7b0;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #tab{
+        display: flex;
+        align-items: center;
+    }
+
+    #tab i{
+        font-size: 24px;
+        color: #575757;
+
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-size: 24px;
+        color: #575757;
+    }
+
+    #navbar .sub-bar{
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+    }
+    #navbar .sub-bar ul{
+        margin-top: 15px;
+        margin-left: -5px;
+        margin-bottom: -10px;
+    }
+
+    #navbar li:hover .sub-bar {
+        position:fixed;
+        background-color: #dcc7b0;
+        margin-left: -155px;
+        top: 100px;
+        /* z-index: 1; 맨앞으로 나오게 */
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    #navbar li:hover .sub-bar ul li {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: -10px;
+        margin-right: -10px;
+        border-radius: 0;
+        text-align: center;
+        width: 160px;
+    }
+
+    #navbar .sub-bar ul li a {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    /*
+    #navbar li:hover .sub-bar {
+        display: flex;
+        position: absolute;
+        margin-left: -50px;
+        margin-top: 15px;
+    }
+
+    #navbar li:hover .sub-bar ul li {
+        margin-top: 15px;
+        
+        margin-left: -10px;
+        margin-right: -10px;
+        border-radius: 0;
+        text-align: center;
+        width: 160px;
+    }*/
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 @media (max-width:799px) {
     .section-p1 {
         padding: 40px 40px;
@@ -442,7 +877,7 @@ footer .copyright{
         right: -300px;
         height: 100vh;
         width: 300px;
-        background-color: #E3E6F3;
+        background-color: #dcc7b0;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 80px 0 0 10px;
         transition: 0.3s;
@@ -455,6 +890,30 @@ footer .copyright{
     #navbar li {
         margin-bottom: 25px;
     }
+
+    #navbar li a.active::after {
+        display: none;
+    }
+
+    #navbar .sub-bar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+
+
+    #navbar li:hover .sub-bar {
+        display: block;
+        background-color: #088178;
+        margin-left: -50px;
+        margin-top: 15px;
+    }
+
+
+
+
     #tab {
         display: flex;
         align-items: center;
@@ -495,7 +954,8 @@ footer .copyright{
     }
 }
 
- Responsive Wed Settings (phone) 
+
+ /* Responsive Wed Settings (phone) 
 @media (max-width: 477px) {
 
     .section-p1 {

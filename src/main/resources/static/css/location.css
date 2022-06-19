@@ -1,0 +1,29 @@
+.location{
+    padding: 10px;
+    
+}
+
+.location_item{
+    display: inline-block;
+
+}
+
+.location_item:not(:last-of-type)::after{
+    content: '\203a'; /* 작은 > 아이콘 */
+    margin: 0 5px;
+    color: black;
+}
+
+.location_link{
+    text-decoration: none;
+    color: black;
+}
+
+.location_link:hover{
+    text-decoration: underline;
+}
+
+.location_link--active{
+    color: rgb(37, 211, 153);
+    font-weight: 500;
+}

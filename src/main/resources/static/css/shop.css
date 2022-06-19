@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+} /* 구글 폰트 css 적용 */
+
+h1 {
+    font-size: 50;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46;
+    line-height: 54px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px o 20px 0;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+body {
+    width: 100%;
+}
+
+/* Header Start */
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #eae4d3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+    z-index: 999; /*헤더랑 hero 영역 구분*/
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #575757;
+    transition: 0.3s ease; /*네비탭 마우스 가져갔을 때 색 부드럽게 바뀌게 설정*/
+    padding-bottom: 20px;
+} 
+
+#navbar li a:hover, /* hover: 네비탭 마우스 가져가면 색 변하는 거*/
+#navbar li a.active {  /*active: 네비탭 현재 선택된 페이지에서 상태 변화 */
+    color: #083c81; 
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #083c81;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+/* 서브 카테고리 */
+#navbar .sub-bar{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li:hover .sub-bar{
+    display: block;
+    position: absolute;
+    background-color: #eae4d3; 
+    margin-left: -50px;
+    margin-top: 15px; 
+} 
+
+#navbar li:hover .sub-bar ul{
+    display: block;
+    
+}
+
+#navbar li:hover .sub-bar ul li{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 0;
+    text-align: center;
+    width: 160px;
+
+}
+
+#navbar .sub-bar ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+} 
+
+#navbar li .sub-bar a.active::after,
+#navbar li .sub-bar a:hover::after {
+    background: none;
+
+}
+
+
+
+/* 가로웹화면에서 햄버거, x 아이콘 안 보이게*/
+#tab {
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
+
+/* 상품 리스트 */
+#product1{
+    text-align: center;
+    width: 100%;
+    display: flex;
+}
+
+/* 사이드 메뉴 */
+#product1 .sidebar {
+    width: 15%;
+    padding-top: 50px;
+    height: 100%;
+    left: 0;
+    /*background: #a8a6a6;*/
+    margin-right: 20px;
+}
+
+#product1 .sidebar .text{
+    color: rgb(30, 30, 30);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.sidebar ul{
+    background: #dcc7b0;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li{
+    line-height: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar ul li a{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    /*border-left: 3px solid transparent;*/
+}
+
+.sidebar ul li a:hover{
+    color: rgb(54, 54, 54);
+    /*background: #1e1e1e;*/
+    /*border-left-color: cyan;*/
+}
+
+.sidebar ul ul li{
+    line-height: 42px;
+    border-bottom: none;
+}
+
+.sidebar ul ul li a{
+    font-size: 17px;
+    color: #fff;
+    /*padding-left: 80px;*/
+}
+
+/* location area */
+
+#product1 .container{
+    display: inline-block;
+    width: 100%;
+    
+}
+
+.location{
+    /*background: #083c81;*/
+    display: flex;
+    margin-left: 40px;
+    margin-top: 60px;
+
+}
+
+.location_item{
+    display: inline-block;
+    font-size: 12px;
+
+}
+
+.location_item:not(:last-of-type)::after{
+    content: '\203a'; /* 작은 > 아이콘 */
+    margin: 0 5px;
+    color: #606063;
+}
+
+.location_link{
+    text-decoration: none;
+    color: #606063;
+}
+
+.location_link:hover{
+    text-decoration: underline;
+}
+
+.location_link-active{
+    font-weight: 500;
+}
+
+
+
+#product1 .pro-container {
+    
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
+
+#product1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #dfdcd3;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06); /*제품에 마우스 가져갔을 때 그림자*/
+}
+
+#product1 .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    color: #083c81;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#product1 .pro .fa-adn{ /*ar피팅 버튼*/
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #f7f3e7;
+    font-weight: 500;
+    color: #083c81;
+    border: 1px solid #eae4d3;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+#page{
+    text-align: center;
+}
+
+#page a{
+    text-decoration: none;
+    background-color: #083c81;
+    padding: 10px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#page a i{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Responsive Wed Settings (Tab) */
+@media (max-width:799px) {
+
+    .section-p1 {
+        padding: 40px 40px;
+    }
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #E3E6F3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+    #tab {
+        display: flex;
+        align-items: center;
+    }
+    #tab i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+
+    #loginicon {
+        display: none;
+    }
+
+    #hero {
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 50%;
+    }
+
+    #product1 .pro-container {
+    
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        margin-left: 0;
+       
+    }
+
+    #product1 .pro {
+
+        margin: 15px;
+    }
+}
+
+/* Responsive Wed Settings (phone) */
+@media (max-width: 477px) {
+
+    .section-p1 {
+        padding: 20px;
+    }
+
+    #header {
+        padding: 10px 20px;
+  
+    }
+    
+    #hero {
+        padding: 0 20px;
+        background-position: top 30% right 50%;
+    }
+
+    #product1 .pro-container {
+        justify-content: center;
+    }
+
+    #product1 .pro {
+        margin: 0 0 15px 0;
+    }
+
+} 

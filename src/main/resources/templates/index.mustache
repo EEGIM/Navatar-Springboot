@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Web Tutorial</title>
-
-    <!-- 구글 폰트 적용-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- 아이콘 사용 링크-->
-    <script src="https://kit.fontawesome.com/2a811fae19.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<section id="header">
-    <a href="index.html"><img src="img/logo.png" class="logo" alt="" width=150px></a>
-
-    <div>
-        <ul id = "navbar">
-            <li><a class="active" href="index.html">Home</a></li>
-
-            <li><a>Shop</a>
-                <div class="sub-bar">
-                    <ul>
-                        <li><a href="shop.html">ROMANTIC CLOWN</a></li>
-                        <li><a href="shop.html">A PIECE OF YOU</a></li>
-                        <li><a href="shop.html">MADRID</a></li>
-                        <li><a href="shop.html">LUVISFALSE</a></li>
-                        <li><a href="shop.html">LEEKIM</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <li><a href="arfitting.html">AR Fitting</a></li>
-            <li><a href="foryou.html">For You</a></li>
-            <li><a href="about.html">About</a></li>
-            <li id="loginicon"><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
-            <!-- <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
-            <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-        </ul>
-    </div>
-    <div id="tab">
-        <a href="login.html"><i class="fa-solid fa-user"></i></a>
-        <i id="bar" class="fa-solid fa-bars"></i>
-    </div>
-</section>
+{{>layout/header}}
 
 <section id="hero">
     <h4>Trade-in-offer</h4>
@@ -62,6 +12,19 @@
     <h2>New Arrivals</h2>
     <p>Summer Collection</p>
     <div class="pro-container">
+        {{#product}}
+            <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
+                <img src={{mainImage}} alt="">
+                <div class="des">
+                    <span>{{brand}}</span>
+                    <h5>{{name}}</h5>
+                    <h4>{{normalPrice}}</h4>
+                </div>
+                {{#ARFitting}}
+                    <a href="#"><i class="fa-brands fa-adn"></i></a>
+                {{/ARFitting}}
+            </div>
+        {{/product}}
         <div class="pro">
             <img src="img/products/n1.jpg" alt="">
             <div class="des">
@@ -71,75 +34,13 @@
             </div>
             <a href="#"><i class="fa-brands fa-adn"></i></a>
         </div>
-        <div class="pro">
-            <img src="img/products/n2.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-        <div class="pro">
-            <img src="img/products/n3.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-        <div class="pro">
-            <img src="img/products/f4.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-        <div class="pro">
-            <img src="img/products/f5.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-        <div class="pro">
-            <img src="img/products/f6.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-        <div class="pro">
-            <img src="img/products/n5.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-        <div class="pro">
-            <img src="img/products/f8.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
+
     </div>
 </section>
 
 <footer class="section-p1">
     <div class="col">
-        <img class="logo" src="img/logo.png" alt="" width="100px">
+        <img class="logo" src="/img/logo.png" alt="" width="100px">
         <h4>Contact</h4>
         <p><strong>Address: </strong>덕성여자대학교</p>
         <p><strong>Phone: </strong>0123456789</p>
@@ -161,6 +62,6 @@
 </footer>
 
 
-<script src="script.js"></script>
+<script src="/js/app/script.js"></script>
 </body>
 </html>

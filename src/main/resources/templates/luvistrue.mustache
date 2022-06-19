@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Tutorial</title>
+
+    <!-- 구글 폰트 적용-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 사용 링크-->
+    <script src="https://kit.fontawesome.com/2a811fae19.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+<section id="header">
+    <a href="/"><img src="/img/logo.png" class="logo" alt="" width=150px></a>
+
+    <div>
+        <ul id = "navbar">
+            <li><a href="/">Home</a></li>
+
+            <li><a class="active">Shop</a>
+                <div class="sub-bar">
+                    <ul>
+                        <li><a href="/brands/romanticcrown">ROMANTIC CROWN</a></li>
+                        <li><a href="/brands/apoc">APIECEOFCAKE</a></li>
+                        <li><a href="/brands/mardimercredi">MARDI MERCREDI</a></li>
+                        <li><a href="/brands/luvistrue">LUV IS TRUE</a></li>
+                        <li><a href="/brands/lee">LEE</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="../arfitting.html">AR Fitting</a></li>
+            <li><a href="../foryou.html">For You</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li id="loginicon"><a href="../login.html"><i class="fa-solid fa-user"></i></a></li>
+            <!-- <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
+            <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+    </div>
+    <div id="tab">
+        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+</section>
+
+<section id="product1" class="section-p1">
+    <div class="sidebar">
+        <div class="text">LUV IS TRUE</div>
+        <ul>
+            <li><a href="/brands/apoc">전체</a></li>
+            <li>
+                <a href="/brands/luvistrue/001">상의</a>
+                <ul>
+                    <li><a href="/brands/luvistrue/001001">반소매티셔츠</a></li>
+                    <li><a href="/brands/luvistrue/001010">긴소매티셔츠</a></li>
+                    <li><a href="/brands/luvistrue/001011">민소매티셔츠</a></li>
+                    <li><a href="/brands/luvistrue/001002">셔츠/블라우스</a></li>
+                    <li><a href="/brands/luvistrue/001003">피케/카라티셔츠</a></li>
+                    <li><a href="/brands/luvistrue/001005">맨투맨, 스웨트셔츠</a></li>
+                    <li><a href="/brands/luvistrue/001004">후드</a></li>
+                    <li><a href="/brands/luvistrue/001006">니트/스웨터</a></li>
+                    <li><a href="/brands/luvistrue/001008">기타 상의</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/brands/luvistrue/003">바지</a>
+                <ul>
+                    <li><a href="/brands/luvistrue/003002">데님팬츠</a></li>
+                    <li><a href="/brands/luvistrue/003007">코튼팬츠</a></li>
+                    <li><a href="/brands/luvistrue/003008">슈트 팬츠/슬랙스</a></li>
+                    <li><a href="/brands/luvistrue/003004">트레이닝/조거팬츠</a></li>
+                    <li><a href="/brands/luvistrue/003009">숏 팬츠</a></li>
+                    <li><a href="/brands/luvistrue/003006">기타 바지</a></li>
+                </ul>
+            </li>
+            <li><a href="/brands/luvistrue/022">스커트</a>
+                <ul>
+                    <li><a href="/brands/luvistrue/022001">미니스커트</a></li>
+                    <li><a href="/brands/luvistrue/022002">미디스커트</a></li>
+                    <li><a href="/brands/luvistrue/022003">롱스커트</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <ul class="location">
+            <li class="location_item">
+                <a href="/" class="location_link">HOME</a>
+            </li>
+            <li class="location_item">
+                <a href="shop.html" class="location_link">SHOP</a>
+            </li>
+            <li class="location_item">
+                <a href="shop_pou.html" class="location_link location_link-active">luvistrue</a>
+            </li>
+        </ul>
+
+        <div class="pro-container">
+            {{#product}}
+                <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
+                    <img src={{mainImage}} alt="">
+                    <div class="des">
+                        <span>{{brand}}</span>
+                        <h5>{{name}}</h5>
+                        <h4>{{normalPrice}}</h4>
+                    </div>
+                    {{#ARFitting}}
+                        <a href="#"><i class="fa-brands fa-adn"></i></a>
+                    {{/ARFitting}}
+                </div>
+            {{/product}}
+        </div>
+    </div>
+</section>
+
+<section id="page" class="section-p1">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#"><i class="fa-solid fa-circle-arrow-right"></i></a>
+</section>
+<footer class="section-p1">
+    <div class="col">
+        <img class="logo" src="/img/logo.png" alt="" width="100px">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong>나바타</p>
+        <p><strong>Phone: </strong>0123456789</p>
+        <p><strong>Github: </strong>git address</p>
+    </div>
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Informatiion</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+
+    <div class="copyright">
+        <p> Copyright ©  </p>
+    </div>
+</footer>
+
+
+<script src="/js/app/script.js"></script>
+</body>
+</html>
