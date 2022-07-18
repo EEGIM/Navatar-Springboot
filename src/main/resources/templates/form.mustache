@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+{{#user}}
+    <p>{{name}}</p>
+    <p>{{email}}</p>
+    <hd></hd>
+{{/user}}
+
+<form action="/users/add" name="user" method="POST">
+    <p>userno: <input type="text" name="userno" /></p>
+    <p>id: <input type="text" name="id" /></p>
+    <p>password: <input type="text" name="password" /></p>
+    <p>name: <input type="text" name="name" /></p>
+    <p>email: <input type="text" name="email" /></p>
+    <p>weight: <input type="text" name="weight" /></p>
+    <p>height: <input type="text" name="height" /></p>
+    <input type="submit" />
+</form>
+</body>
+</html>

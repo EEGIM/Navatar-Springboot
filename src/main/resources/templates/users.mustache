@@ -1,0 +1,16 @@
+<html>
+<head>
+
+</head>
+<body>
+{{#user}}
+    <p>{{name}}</p>
+    <p>{{email}}</p>
+    <p>{{height}}cm/{{weight}}kg</p>
+
+    <form action="/users/{{userno}}/delete" method="POST">
+        <input type="submit" value="delete"/>
+    </form>
+{{/user}}
+</body>
+</html>
