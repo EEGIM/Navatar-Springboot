@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ec2-user
+
+hooks:
+  ApplicationStop:
+    - location: Scripts/kill_process.sh # ApplicationStop 생명주기에 해당 sh 실행
+  BeforeInstall:
+    - location: Scripts/remove_before.sh
+  ApplicationStart:
+    - location: Scripts/run_process.sh

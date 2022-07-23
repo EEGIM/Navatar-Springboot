@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Data
 @Getter
@@ -38,4 +39,10 @@ public class User {
 
     @Column(name="height", columnDefinition = "INT")
     private Long height;
+
+    @Column(name="createddate", columnDefinition = "Date")
+    private LocalDateTime createddate;
+
+    @Column(name="modifieddate", columnDefinition = "Date")
+    private LocalDateTime modifieddate;
 }
