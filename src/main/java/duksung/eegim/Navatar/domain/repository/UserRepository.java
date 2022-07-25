@@ -1,6 +1,6 @@
 package duksung.eegim.Navatar.domain.repository;
 
-import duksung.eegim.Navatar.domain.Product.User;
+import duksung.eegim.Navatar.domain.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

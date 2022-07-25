@@ -160,7 +160,7 @@ body {
 
 /* Home Page*/
 #hero{
-    background-image: url("/img/hero.jpg");
+    background-image: url("img/hero.jpg");
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -181,7 +181,7 @@ body {
 }
 
 #hero button{
-    background-image: url("/img/button.png");
+    background-image: url("img/button.png");
     background-color: transparent;
     color: #083c81;
     border: 0;
@@ -402,7 +402,7 @@ footer .copyright{
     font-size: 16px;
     margin-right: 10px;
     /* border-radius: 30px; */
-    
+
 
 }
 
@@ -487,7 +487,7 @@ footer .copyright{
     width: 600px;
     height: 280px;
     font-size: 20px;
-    
+
 }
 
 .review_write .review_write_form .review_writing{
@@ -497,8 +497,8 @@ footer .copyright{
 }
 
 .review_write_star_rating{
-    user-select: none;  
-    margin-top: 15px; 
+    user-select: none;
+    margin-top: 15px;
 }
 
 .review_write_star_rating .star{
@@ -527,7 +527,7 @@ footer .copyright{
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    
+
 
 }
 
@@ -543,7 +543,7 @@ footer .copyright{
 .review_p_info{
     margin-top: 30px;
     display: flex;
-} 
+}
 
 .review_p_info1 img{
     width: 70px;
@@ -557,7 +557,7 @@ footer .copyright{
 
 .review_star_rating{
     margin-top: 20px;
-    
+
 }
 
 .review_star i{
@@ -576,7 +576,7 @@ footer .copyright{
 .review_write_imgBtn{
     margin-top: 15px;
     margin-bottom: 15px;
-    
+
 }
 .review_write_applyBtn{
     background-color: #083c81;
@@ -624,6 +624,16 @@ footer .copyright{
     width: 100%;
     height: 70vh;
     display: flex;
+    max-width: 600px;
+    height: 650px;
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 10px 12px;
+    border: 1px solid #dcc7b0;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+
 }
 
 #login-area .contentBx{
@@ -636,7 +646,7 @@ footer .copyright{
 
 /*
 #login-area .contentBx .formBx{
-    
+
 }*/
 
 #login-area .contentBx .formBx h2{
@@ -718,22 +728,264 @@ footer .copyright{
 #login-area .contentBx .formBx .scl{
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     flex-direction: column;
     width: 100%;
- 
+
 }
 
 #login-area .contentBx .formBx .scl li{
     list-style: none;
     cursor: pointer;
     justify-content: center;
-    
+
 }
 
 #login-area .contentBx .formBx .scl li img{
-    justify-content: center; 
+    justify-content: center;
 }
+
+/* Sign Up Page */
+#signup_wrapper {
+    max-width: 600px;
+    height: 650px;
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 10px 12px;
+    border: 1px solid #dcc7b0;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+
+}
+
+#signup_wrapper h2{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #083c81;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+#signup_wrapper .signup_form {
+    width: 100%;
+    margin-top: 50px;
+}
+
+#signup_wrapper .signup_form .input_field {
+
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
+#signup_wrapper .signup_form .input_field label {
+    width: 200px;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+#signup_wrapper .signup_form .input_field .input {
+    width: 100%;
+    border: 1px solid #575757;
+    font-size: 15px;
+    padding: 8px 10x;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    margin-right: 40px;
+    height: 30px;
+}
+
+
+#signup_wrapper .signup_form .text {
+    width: 100%;
+    align-items: center;
+    margin-left: 300px;
+}
+
+#signup_wrapper .signup_form .text p {
+    font-size: 12px;
+}
+
+#signup_wrapper .inputBx input[type="submit"] {
+
+    width: 50%;
+    padding: 10px 10px;
+    border: 1px solid #083c81;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #222;
+    background: transparent;
+    margin-left: 150px;
+    align-items: center;
+    margin-top: 20px;
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+
+
+
+#login-area .contentBx .formBx .inputBx input[type="button"]{
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* My Page */
+
+#mypage-area{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    max-width: 600px;
+    background: #fff;
+    margin: 20px auto;
+    padding: 10px 12px;
+    border: 1px solid #dcc7b0;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+
+}
+
+#mypage-area .contentBx{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    background-color: #088178;
+    position: relative;
+    margin: 20px;
+    max-height: 600px;
+}
+
+#mypage-area .contentBx h2{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #083c81;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    background-color: #465b52;
+
+}
+
+#mypage-area .contentBx .mypage-form {
+    background-color: #dcc7b0;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    height: 80%;
+
+}
+
+#mypage-area .contentBx .mypage-form .profile {
+    background-color: red;
+    display:flex;
+    width: 100%;
+    height: 20%;
+
+}
+
+#mypage-area .contentBx .mypage-form .profile .profile-pic {
+    background-color: orange;
+    align-items: center;
+    width: 30%;
+}
+
+#mypage-area .contentBx .mypage-form .profile .proflie-name {
+    background-color: yellow;
+    align-items: center;
+    width: 70%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu {
+    background: greenyellow;
+    height: 70%;
+    margin-top: 25px;
+
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu a {
+    text-decoration: none;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu a:visited,
+#mypage-area .contentBx .mypage-form .mypage-menu a:link,
+#mypage-area .contentBx .mypage-form .mypage-menu a:hover,
+#mypage-area .contentBx .mypage-form .mypage-menu a:active {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu .menu1 {
+    background-color: skyblue;
+    width: 100%;
+    height: 25%;
+    text-decoration: none;
+    border-bottom: 2px solid #083c81;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu .menu2 {
+    background-color: rgb(75, 75, 242);
+    height: 25%;
+    text-decoration: none;
+    border-bottom: 2px solid #083c81;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu .menu3 {
+    background-color: rgb(171, 57, 248);
+    height: 25%;
+    text-decoration: none;
+    border-bottom: 2px solid #083c81;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu .menu4 {
+    background-color: rgb(125, 123, 123);
+    height: 25%;
+    text-decoration-line: none;
+    border-bottom: 2px solid #083c81;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
 
 
 
@@ -807,7 +1059,7 @@ footer .copyright{
         /* z-index: 1; 맨앞으로 나오게 */
         align-items: center;
         justify-content: center;
-        
+
     }
 
     #navbar li:hover .sub-bar ul li {
@@ -827,23 +1079,6 @@ footer .copyright{
         text-align: center;
     }
 
-    /*
-    #navbar li:hover .sub-bar {
-        display: flex;
-        position: absolute;
-        margin-left: -50px;
-        margin-top: 15px;
-    }
-
-    #navbar li:hover .sub-bar ul li {
-        margin-top: 15px;
-        
-        margin-left: -10px;
-        margin-right: -10px;
-        border-radius: 0;
-        text-align: center;
-        width: 160px;
-    }*/
     
 }
 

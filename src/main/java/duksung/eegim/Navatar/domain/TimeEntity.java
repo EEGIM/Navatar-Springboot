@@ -1,10 +1,11 @@
-package duksung.eegim.Navatar.domain.Product;
+package duksung.eegim.Navatar.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
@@ -12,11 +13,11 @@ import java.time.LocalDateTime;
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class BaseTimeEntity {
-
+public class TimeEntity {
     @CreatedDate
-    private LocalDateTime createdDate;
+    @Column(updatable = false)
+    private LocalDateTime createddate;
 
     @LastModifiedDate
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modifieddate;
 }

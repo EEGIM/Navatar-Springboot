@@ -3,17 +3,14 @@ package duksung.eegim.Navatar.web.service;
 import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.Product.ProductDetail;
 import duksung.eegim.Navatar.domain.Product.ProductSize;
-import duksung.eegim.Navatar.domain.Product.User;
 import duksung.eegim.Navatar.domain.repository.ProductDetailRepository;
 import duksung.eegim.Navatar.domain.repository.ProductRepository;
 import duksung.eegim.Navatar.domain.repository.ProductSizeRepository;
-import duksung.eegim.Navatar.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 

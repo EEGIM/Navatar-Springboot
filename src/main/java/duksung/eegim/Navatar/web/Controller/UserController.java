@@ -1,11 +1,10 @@
 package duksung.eegim.Navatar.web.Controller;
 
-import duksung.eegim.Navatar.domain.Product.User;
+import duksung.eegim.Navatar.web.dto.UserRegisterDto;
 import duksung.eegim.Navatar.web.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -17,8 +16,7 @@ public class UserController {
     public UserController(UserService userService) { this.userService = userService; }
 
     @GetMapping("/users/signup")
-    public String getUsersList(Model model){
-        model.addAttribute("user", userService.getUsers());
+    public String getUsersList(){
         return "signup";
     }
 
@@ -26,8 +24,8 @@ public class UserController {
     // 예외 처리 하기
     // dto 만들어서 처리하기 (직접 처리 말고) + jquery도 사용하기
     @PostMapping("/users/signup")
-    public String addUser(Model model, @ModelAttribute("user") User user){
-        User newUser = userService.userSave(user);
+    public String addUser(UserRegisterDto userRegisterDto){
+        userService.userSave(userRegisterDto);
         return "signup-after";
     }
 

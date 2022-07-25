@@ -1,29 +1,25 @@
 package duksung.eegim.Navatar.web.service;
 
-import duksung.eegim.Navatar.domain.Product.User;
+import duksung.eegim.Navatar.domain.User.User;
 import duksung.eegim.Navatar.domain.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import duksung.eegim.Navatar.web.dto.UserRegisterDto;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Service
 public class UserService {
 
-    @Autowired
     private UserRepository userRepository;
 
     public List<User> getUsers() {
         return (List<User>) userRepository.findAll();
     }
 
-    public User userSave(User user) {
-        user.setCreateddate(LocalDateTime.now());
-        return userRepository.save(user);
+    public Long userSave(UserRegisterDto requestDto) {
+        return userRepository.save(requestDto.toEntity()).getUserno();
     }
 
     public User getUser(long userno){

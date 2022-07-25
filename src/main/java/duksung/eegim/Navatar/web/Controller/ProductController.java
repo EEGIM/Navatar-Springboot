@@ -17,7 +17,7 @@ public class ProductController {
     public String getProduct(Model model, @PathVariable String productNo){
 
         Long pno = Long.parseLong(productNo);
-        // model.addAttribute() 여러개로 사용하는 것, 의존성에 문제 있어보임. 추후 수정 필요
+        // model.addAttribute() 여러개로 사용하는 것, 의존성에 문제?
         model.addAttribute("product", productService.getProduct(pno));
         model.addAttribute("details", productService.getProductDetail(pno));
         model.addAttribute("sizes", productService.getSize(pno));
