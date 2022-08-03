@@ -10,7 +10,7 @@ public class HomeController {
     public String home(){
         return "home";
     }
-    
+
     @GetMapping("/deploy-test")
     public String deployTest() {return "AWS-Jenkins deploy test!!";}
 }
