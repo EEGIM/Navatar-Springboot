@@ -12,5 +12,5 @@ public class HomeController {
     }
 
     @GetMapping("/deploy-test")
-    public String deployTest() {return "AWS-Jenkins deploy test!!";}
+    public String deployTest() {return "AWS-Jenkins deploy test!!!";}
 }
