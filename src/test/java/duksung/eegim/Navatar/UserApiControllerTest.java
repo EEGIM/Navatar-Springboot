@@ -33,33 +33,6 @@ public class UserApiControllerTest {
 
     @Test
     public void 회원등록() throws Exception {
-        //given
-        String id = "abcd";
-        String password = "abc123";
-        String name = "name";
-        String email = "123@aa.com";
-        Long weight = 60L;
-        Long height = 165L;
-        UserRegisterDto userRegisterDto = UserRegisterDto.builder()
-                .id(id)
-                .password(password)
-                .name(name)
-                .email(email)
-                .weight(weight)
-                .height(height)
-                .build();
 
-        String url = "http://localhost:"+port+"/users/signup";
-
-        //when
-        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, userRegisterDto, Long.class);
-
-        //then
-        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(responseEntity.getBody()).isGreaterThan(0L);
-
-        List<User> all = userRepository.findAll();
-        assertThat(all.get(0).getId()).isEqualTo(id);
-        assertThat(all.get(0).getName()).isEqualTo(name);
     }
 }

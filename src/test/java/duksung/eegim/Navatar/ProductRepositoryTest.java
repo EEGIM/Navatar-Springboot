@@ -20,10 +20,6 @@ public class ProductRepositoryTest {
     @Test
     public void 상품_불러오기(){
 
-        Long productNo = Long.valueOf(1);
-        Product product = productRepository.findByProductNo(productNo);
-        System.out.println(product.getProductNo());
-        assertThat(product.getProductNo()).isEqualTo(productNo);
     }
 
 }
