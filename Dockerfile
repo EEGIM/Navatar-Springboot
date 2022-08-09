@@ -3,7 +3,7 @@ FROM openjdk:11-jdk
 
 VOLUME /tmp
 
-ARG JAR_FILE=./build/libs/duksung.eegim.Navatar-1.0.4-SNAPSHOT.jar
+ARG JAR_FILE=./build/libs/*.jar
 
 COPY ${JAR_FILE} app.jar
 
