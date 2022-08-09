@@ -1,4 +1,3 @@
-#!/bin/sh
 sudo docker ps -a -q --filter "name=navataraws" | grep -q . && docker stop navataraws && docker rm navataraws | true
 
 sudo docker rmi oiatmil/navataraws:1.0
