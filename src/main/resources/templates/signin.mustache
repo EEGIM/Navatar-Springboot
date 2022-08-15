@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Tutorial</title>
+
+    <!-- 구글 폰트 적용-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 사용 링크-->
+    <script src="https://kit.fontawesome.com/2a811fae19.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<section id="header">
+    <a href="/"><img src="/img/logo.png" class="logo" alt="" width=150px></a>
+
+    <div>
+        <ul id = "navbar">
+            <li><a href="/">Home</a></li>
+
+            <li><a class="active">Shop</a>
+                <div class="sub-bar">
+                    <ul>
+                        <li><a href="/brands/romanticcrown">ROMANTIC CROWN</a></li>
+                        <li><a href="/brands/apoc">APIECEOFCAKE</a></li>
+                        <li><a href="/brands/mardimercredi">MARDI MERCREDI</a></li>
+                        <li><a href="/brands/luvistrue">LUV IS TRUE</a></li>
+                        <li><a href="/brands/lee">LEE</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="../arfitting.html">AR Fitting</a></li>
+            <li><a href="../foryou.html">For You</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li id="loginicon"><a href="../login.html"><i class="fa-solid fa-user"></i></a></li>
+            <!-- <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
+            <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+    </div>
+    <div id="tab">
+        <a href="../login.html"><i class="fa-solid fa-user"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+</section>
+
+<section id="login-area">
+
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Login</h2>
+            <form>
+                <div class="inputBx">
+                    <span>User ID</span>
+                    <input type="text" name="">
+                </div>
+                <div class="inputBx">
+                    <span>Password</span>
+                    <input type="password" name="">
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox" name=""> Remember ID</label>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" value="Sign in" name="">
+                </div>
+                <div class="inputBx">
+                    <p>Don't have an account? <a href="/users/signup">Create account</a></p>
+                </div>
+            </form>
+            <h4>SNS 계정으로 시작하기</h4>
+            <ul class="scl">
+                {{#userName}}
+                    <p>Hi, {{userName}}</p>
+                    <a href="/logout" role="button">logout</a>
+                {{/userName}}
+                {{^userName}}
+                    <li><a href="/oauth2/authorization/google">로그인</a></li>
+                {{/userName}}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="section-p1">
+    <div class="col">
+        <img class="logo" src="/img/logo.png" alt="" width="100px" />
+        <h4>Contact</h4>
+        <p><strong>Address: </strong>나바타</p>
+        <p><strong>Phone: </strong>0123456789</p>
+        <p><strong>Github: </strong>git address</p>
+    </div>
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Informatiion</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+
+    <div class="copyright">
+        <p> Copyright ©  </p>
+    </div>
+</footer>
+
+
+<script src="/js/app/script.js"></script>
+</body>
+</html>

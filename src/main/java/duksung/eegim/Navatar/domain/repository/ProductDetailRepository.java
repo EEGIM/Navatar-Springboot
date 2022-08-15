@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ProductDetailRepository extends JpaRepository<ProductDetail, Long> {
-    List<ProductDetail> findByProductNo(Long productNo);
+    List<ProductDetail> findByProductNoLike(Long productNo);
 }

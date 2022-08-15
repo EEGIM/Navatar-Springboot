@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name="productsize")
 public class ProductSize {
     @Id
-    @Column(name="productno", columnDefinition = "INT")
+    @Column(name="productNo", columnDefinition = "INT")
     private Long productNo;
 
     @Column(name="size", length=10)

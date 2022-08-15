@@ -9,12 +9,12 @@ import javax.persistence.*;
 @Table(name="productdetail")
 public class ProductDetail {
     @Id
-    @Column(name="productno", columnDefinition = "INT")
+    @Column(name="productNo", columnDefinition = "INT")
     private Long productNo;
 
     @Column(name="image", length=200)
     private String image;
 
-    @Column(name="imgno", columnDefinition = "INT")
-    private int imgno;
+    @Column(name="imgNo", columnDefinition = "INT")
+    private int imgNo;
 }

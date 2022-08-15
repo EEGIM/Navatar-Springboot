@@ -94,10 +94,9 @@
         <p> 사이즈를 선택하세요 </p>
         <select>
             <option>Select Size</option>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
+            {{#sizes}}
+                <option>{{size}}</option>
+            {{/sizes}}
         </select>
         <p> 수량 </p>
         <input type="number" value="1">

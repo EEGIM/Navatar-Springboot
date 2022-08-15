@@ -1,19 +1,23 @@
 package duksung.eegim.Navatar.web.Controller;
 
+import duksung.eegim.Navatar.config.auth.dto.SessionUser;
 import duksung.eegim.Navatar.web.dto.UserRegisterDto;
 import duksung.eegim.Navatar.web.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
+
+@RequiredArgsConstructor
 @Controller
 public class UserController {
 
     private final UserService userService;
-
-    public UserController(UserService userService) { this.userService = userService; }
+    private final HttpSession httpSession;
 
     @GetMapping("/users/signup")
     public String getUsersList(){
@@ -39,5 +43,16 @@ public class UserController {
     public String deleteUser(Model model, @PathVariable long userno){
         userService.deleteUser(userno);
         return "users";
+    }
+
+    @GetMapping("/users/signin")
+    public String signin(Model model){
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
+        return "signin";
     }
 }

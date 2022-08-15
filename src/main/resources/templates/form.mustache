@@ -3,21 +3,13 @@
     <meta charset="utf-8" />
 </head>
 <body>
-{{#user}}
-    <p>{{name}}</p>
-    <p>{{email}}</p>
-    <hd></hd>
-{{/user}}
+{{#userName}}
+    <p>Hi, {{userName}}</p>
+    <a href="/logout" role="button">logout</a>
+{{/userName}}
+{{^userName}}
+    <li><a href="/oauth2/authorization/google">hhh</a></li>
+{{/userName}}
 
-<form action="/users/add" name="user" method="POST">
-    <p>userno: <input type="text" name="userno" /></p>
-    <p>id: <input type="text" name="id" /></p>
-    <p>password: <input type="text" name="password" /></p>
-    <p>name: <input type="text" name="name" /></p>
-    <p>email: <input type="text" name="email" /></p>
-    <p>weight: <input type="text" name="weight" /></p>
-    <p>height: <input type="text" name="height" /></p>
-    <input type="submit" />
-</form>
 </body>
 </html>

@@ -47,7 +47,7 @@ public class ProductService {
 
     @Transactional
     public List<ProductDetail> getProductDetail(Long productNo){
-        return productDetailRepository.findByProductNo(productNo);
+        return (List<ProductDetail>) productDetailRepository.findByProductNoLike(productNo);
     }
 
     @Transactional
