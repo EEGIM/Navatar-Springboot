@@ -2,9 +2,11 @@ package duksung.eegim.Navatar.config.auth;
 
 import duksung.eegim.Navatar.domain.User.Role;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @RequiredArgsConstructor
 @EnableWebSecurity
@@ -27,9 +29,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/users/signin")
                 .permitAll()
                 .defaultSuccessUrl("/users/signin") // 로그인 후 로드할 페이지
+                .successHandler(successHandler())
                 .userInfoEndpoint()
                 .userService(customOAuth2UserService); // 소셜 로그인 성공 후 추가 정보 기입
+    }
 
-
+    @Bean
+    public AuthenticationSuccessHandler successHandler() {
+        return new LoginSuccessHandler();
     }
 }

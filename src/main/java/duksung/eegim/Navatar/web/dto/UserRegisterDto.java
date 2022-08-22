@@ -1,9 +1,11 @@
 package duksung.eegim.Navatar.web.dto;
 
+import duksung.eegim.Navatar.config.auth.dto.SessionUser;
 import duksung.eegim.Navatar.domain.User.Role;
 import duksung.eegim.Navatar.domain.User.User;
 import lombok.*;
 
+import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 
 @Getter
@@ -21,7 +23,7 @@ public class UserRegisterDto {
     private Role role;
 
     @Builder
-    public UserRegisterDto(Long userno, String name, String email, Long weight, Long height, LocalDateTime createdDate, LocalDateTime modifiedDate, Role role){
+    public UserRegisterDto(Long userno, String name, String email, Long weight, Long height, LocalDateTime createdDate, LocalDateTime modifiedDate){
         this.userno = userno;
         this.name = name;
         this.email = email;
@@ -29,7 +31,14 @@ public class UserRegisterDto {
         this.height = height;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
-        this.role = role;
+        this.role = Role.USER;
+    }
+
+    @Builder
+    public UserRegisterDto(Long weight, Long height) {
+        this.weight = weight;
+        this.height = height;
+        this.role = Role.USER;
     }
 
     public User toEntity(){
@@ -39,7 +48,7 @@ public class UserRegisterDto {
                 .email(email)
                 .weight(weight)
                 .height(height)
-                .role(role)
+                .role(Role.USER)
                 .build();
     }
 }

@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
@@ -19,8 +21,14 @@ public class UserController {
     private final UserService userService;
     private final HttpSession httpSession;
 
-    @GetMapping("/users/signup")
-    public String getUsersList(){
+    @RequestMapping("/users/signup")
+    public String getUsersList(Model model, HttpServletRequest request){
+        HttpSession httpSession = request.getSession(); // 여기 service로 가는게 맞나?
+        SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
+        String email = sessionUser.getEmail();
+        String name = sessionUser.getName();
+        model.addAttribute("email", email);
+        model.addAttribute("name", name);
         return "signup";
     }
 
@@ -28,8 +36,11 @@ public class UserController {
     // 예외 처리 하기
     // dto 만들어서 처리하기 (직접 처리 말고) + jquery도 사용하기
     @PostMapping("/users/signup")
-    public String addUser(UserRegisterDto userRegisterDto){
-        userService.userSave(userRegisterDto);
+    public String addUser(UserRegisterDto userRegisterDto, HttpServletRequest request){
+        HttpSession httpSession = request.getSession(); // 여기 service로 가는게 맞나?
+        SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
+        String email = sessionUser.getEmail();
+        System.out.println("이메일"+userService.userUpdate(email, userRegisterDto));
         return "signup-after";
     }
 
