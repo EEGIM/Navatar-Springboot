@@ -34,7 +34,7 @@ p {
 }
 
 .section-p1 {
-    padding: 40px 80px;
+    padding: 40px 200px;
 
 }
 
@@ -75,7 +75,7 @@ body {
 #navbar li{
     list-style: none;
     padding: 0 20px;
-    
+
     position: relative;
 }
 
@@ -86,11 +86,11 @@ body {
     color: #575757;
     transition: 0.3s ease; /*네비탭 마우스 가져갔을 때 색 부드럽게 바뀌게 설정*/
     padding-bottom: 20px;
-} 
+}
 
 #navbar li a:hover, /* hover: 네비탭 마우스 가져가면 색 변하는 거*/
 #navbar li a.active {  /*active: 네비탭 현재 선택된 페이지에서 상태 변화 */
-    color: #083c81; 
+    color: #083c81;
 }
 
 #navbar li a.active::after,
@@ -113,14 +113,14 @@ body {
 #navbar li:hover .sub-bar{
     display: block;
     position: absolute;
-    background-color: #eae4d3; 
+    background-color: #eae4d3;
     margin-left: -50px;
-    margin-top: 15px; 
-} 
+    margin-top: 15px;
+}
 
 #navbar li:hover .sub-bar ul{
     display: block;
-    
+
 }
 
 #navbar li:hover .sub-bar ul li{
@@ -138,13 +138,59 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-} 
+}
 
 #navbar li .sub-bar a.active::after,
 #navbar li .sub-bar a:hover::after {
     background: none;
 
 }
+
+
+
+
+#navbar .sub-bar2{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li:hover .sub-bar2{
+    display: block;
+    position: absolute;
+    background-color: #eae4d3;
+    margin-left: -30px;
+    margin-top: 15px;
+}
+
+#navbar li:hover .sub-bar2 ul{
+    display: block;
+
+}
+
+#navbar li:hover .sub-bar2 ul li{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 0;
+    text-align: center;
+    width: 100px;
+
+}
+
+#navbar .sub-bar2 ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#navbar li .sub-bar2 a.active::after,
+#navbar li .sub-bar2 a:hover::after {
+    background: none;
+
+}
+
 
 
 
@@ -158,9 +204,9 @@ body {
     display: none;
 }
 
-/* Home Page*/
+/* Index Page*/
 #hero{
-    background-image: url("img/hero.jpg");
+    background-image: url("/img/hero.jpg");
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -208,7 +254,7 @@ body {
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
-    border: 1px solid #cce7d0;
+    border: 1px solid #dfdcd3;
     border-radius: 25px;
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
@@ -304,13 +350,14 @@ footer .copyright{
 }
 
 /* Shop Page */
-#page{
+
+#page {
+    width: 100%;
     text-align: center;
 }
 
 #page a{
     text-decoration: none;
-    background-color: #088178;
     padding: 15px 20px;
     border-radius: 4px;
     color: #fff;
@@ -327,7 +374,7 @@ footer .copyright{
 #prodetails .single-pro-image{
     width: 50%;
     margin-right: 50px;
-
+    padding-left: 50px;
 }
 
 #prodetails .fa-adn{
@@ -336,12 +383,13 @@ footer .copyright{
     line-height: 40px;
     text-align: center;
     border-radius: 50px;
-    background-color: #e8f6ea;
+    background-color: #f7f3e7;
     font-weight: 500;
-    color: #088178;
-    border: 1px solid #cce7d0;
+    color: #083c81;
+    border: 1px solid #eae4d3;
     position: absolute;
     top: 130px;
+    margin: 10px 10px;
 
 }
 
@@ -362,7 +410,9 @@ footer .copyright{
 
 #prodetails .single-pro-details{
     width: 50%;
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-left: 30px;
+
 }
 
 #prodetails .single-pro-details h4{
@@ -406,8 +456,70 @@ footer .copyright{
 
 }
 
-#prodetails .single-pro-details .proBtn{
+#prodetails .single-pro-details table {
     margin-top: 20px;
+    max-width: 300px;
+}
+
+#prodetails .single-pro-details table th {
+    height: 21px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 100px;
+    text-align: left;
+}
+
+#prodetails .single-pro-details table td {
+    height: 21px;
+    vertical-align: middle;
+    width: auto;
+}
+
+
+#prodetails .single-pro-details .proBtn{
+    display: block;
+    margin-top: 20px;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+#prodetails .single-pro-details .proBtn a {
+    text-decoration: none;
+}
+
+
+#prodetails .single-pro-details .proBtn .Btn-a {
+    background-color: #083c81;
+}
+
+#prodetails .single-pro-details .proBtn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 700 !important;
+    color: #fff;
+}
+
+#prodetails .single-pro-details .proBtn .line1 {
+    margin: 0 0 4px;
+}
+
+#prodetails .single-pro-details .proBtn .line2 {
+    display: flex;
+}
+
+#prodetails .single-pro-details .proBtn .line2 .cart_Btn {
+    width: 100%;
+    padding-right: 2px;
+}
+
+
+#prodetails .single-pro-details .proBtn .line2 .wish_Btn {
+    width: 100%;
+    padding-left: 2px;
 }
 
 #prodetails .single-pro-details button .normal{
@@ -512,88 +624,184 @@ footer .copyright{
     cursor: pointer;
 }
 
-
-
-
-/* Review area*/
-#review h2{
-    text-align: center;
-    margin-top: 20px;
-
+#review {
+margin-bottom: 70px;
 }
 
-#review .review_container{
+#review h2 {
+
+    align-items: center;
+    justify-content: center;
     display: flex;
+    border-bottom: double;
+}
+#review .ReviewList {
     width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-
-
+    margin-top: 5px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 20px;
 }
 
-#review .review_container.review_list{
-    display: flex;
+#review .ReviewList table {
     width: 100%;
 }
-.review_nick{
-    font-size: 20px;
-
+#review .ReviewList table tbody {
+    vertical-align: middle;
 }
 
-.review_p_info{
-    margin-top: 30px;
-    display: flex;
+#review .ReviewList table tbody tr {
+    border-bottom: 1px #000000;
 }
-
-.review_p_info1 img{
-    width: 70px;
-    display: flex;
-}
-
-.review_p_info2{
-    margin-left: 20px;
+#review .ReviewList table td {
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.review_star_rating{
-    margin-top: 20px;
+#review .wrap {
+    width: 100%;
+    text-align: right;
 
 }
 
-.review_star i{
-    color: #f6cd17;
+#review .wrap .review_writeBtn{
+    display: flex;
+    float: right;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
 
 }
 
-.review_text{
-    margin-top: 15px;
+#review .wrap .review_writeBtn input[type="writeBtn"] {
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    width: 90px;
+    height: 30px;
+    margin-right: 8px;
+
 }
 
-.review_photo{
-    margin-top: 15px;
+
+
+#review .page {
+    display: block;
+    margin-top: 70px;
+    align-items: center;
 }
 
-.review_write_imgBtn{
+#review .page .left {
+    width: 25%;
+    float: left;
+    padding: 3px 0 0 100px;
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    letter-spacing: 0;
+    text-align: left;
+    display: block;
+    vertical-align: middle;
+    display: inline;
+
+}
+#review .page .center {
+width: 50%;
+float: left;
+display: block;
+text-align: center;
+font-size: 0;
+line-height: 0;
+vertical-align: middle;
+display: inline;
+zoom: 1;
+margin: 0;
+padding: 0;
+
+}
+
+#review .page .center li {
+
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #888;
+    vertical-align: top;
+    display: inline;
+}
+
+#review .page .center li a {
+
+    margin: 0 2px;
+    padding: 0 5px;
+    color: #888;
+    background: #fff;
+}
+
+#review .page .right {
+    width: 25%;
+    float: right;
+    padding: 3px 100px 0 0;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    letter-spacing: 0;
+    text-align: right;
+    display: block;
+    vertical-align: middle;
+    display: inline;
+}
+
+/** 리뷰 상세 화면 **/
+
+#reviewdetails {
+
+}
+#reviewdetails .contentBx {
+    padding: 150px 0 100px 0;
+    width: 70%;
+    align-items: center;
+    justify-items: center;
+    min-height: 700px;
+    margin: 0 auto;
+
+
+}
+
+#reviewdetails .contentBx .reviewdRead .title {
+    padding: 0 5px 0 10px;
+
+}
+
+#reviewdetails .contentBx .reviewdRead .info {
     margin-top: 15px;
     margin-bottom: 15px;
-
-}
-.review_write_applyBtn{
-    background-color: #083c81;
-    color: #fff;
-    width: 100px;
-    height: 30px;
-    font-weight: 600;
-}
-.review_write_cancleBtn{
-    width: 100px;
-    height: 30px;
-    background-color: #d1d1e0;
-
 }
 
+#reviewdetails .contentBx .reviewdRead .info p {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px 0 10px;
+}
+#reviewdetails .contentBx .reviewdRead .content {
+    padding: 25px 0 25px 0;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+}
 
+#reviewdetails .contentBx .reviewdRead .review_pic {
+    margin-top: 20px;
+    height: 445px;
+    width: 100%;
+}
 
+#reviewdetails .contentBx .reviewdRead .review_pic img {
+    height: 440px;
+}
 
 /* ar피팅 화면 */
 #arfit-logo{
@@ -605,6 +813,81 @@ footer .copyright{
 }
 
 /* For You */
+#foryou{
+    text-align: center;
+}
+
+
+#foryou .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#foryou .location {
+    margin-top: 60px;
+
+}
+
+#foryou .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #dfdcd3;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+#foryou .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06); /*제품에 마우스 가져갔을 때 그림자*/
+}
+
+#foryou .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#foryou .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#foryou .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#foryou .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#foryou .pro .des h4 {
+    padding-top: 7px;
+    color: #083c81;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#foryou .pro .fa-adn{ /*ar피팅 버튼*/
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #f7f3e7;
+    font-weight: 500;
+    color: #083c81;
+    border: 1px solid #eae4d3;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
 
 
 
@@ -633,6 +916,7 @@ footer .copyright{
     border: 1px solid #dcc7b0;
     border-radius: 25px;
     box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+    margin-top: 50px;
 
 }
 
@@ -688,7 +972,7 @@ footer .copyright{
     */
 }
 
-#login-area .contentBx .formBx .inputBx input[type="submit"]{
+#login-area .contentBx .formBx .inputBx input[type="button"]{
     background: #083c81;
     color: #fff;
     outline: none;
@@ -698,7 +982,7 @@ footer .copyright{
     cursor: pointer;
 }
 
-#login-area .contentBx .formBx .inputBx input[type="submit"]:hover{
+#login-area .contentBx .formBx .inputBx input[type="button"]:hover{
     background: #0a4ba0;
 }
 
@@ -746,7 +1030,12 @@ footer .copyright{
 }
 
 /* Sign Up Page */
-#signup_wrapper {
+
+#signup-area {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
     max-width: 600px;
     height: 650px;
     width: 100%;
@@ -756,10 +1045,175 @@ footer .copyright{
     border: 1px solid #dcc7b0;
     border-radius: 25px;
     box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+    margin-top: 50px;
 
 }
 
-#signup_wrapper h2{
+#signup-area .contentBx{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /*스크롤 생성*/
+}
+
+
+#signup-area .contentBx .formBx h2{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #083c81;
+    letter-spacing: 1px;
+}
+
+#signup-area .contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+#signup-area .contentBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #222;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#signup-area .contentBx .formBx .inputBx input{
+    width: 100%;
+    padding: 10px 10px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #083c81;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #222;
+    background: transparent;
+
+}
+
+#signup-area .contentBx .formBx .inputBx input[type="submit"]{
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#signup-area .contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #0a4ba0;
+}
+
+#signup-area .contentBx .formBx .remember{
+    margin-bottom: 10px;
+    color: #575757;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#login-area .contentBx .formBx .inputBx p{
+    color: #575757;
+}
+
+#signup-area .contentBx .formBx .inputBx p a{
+    color: #083c81;
+}
+
+#signup-area .contentBx .formBx h4{
+    color: #222;
+    text-align: center;
+    margin: 40px 0 10px;
+    font-weight: 500;
+}
+
+
+#signup-area .contentBx .formBx .scl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+#signup-area .contentBx .formBx .scl li{
+    list-style: none;
+    cursor: pointer;
+    justify-content: center;
+
+}
+
+#signup-area .contentBx .formBx .scl li img{
+    justify-content: center;
+}
+
+#signup-area .contentBx .formBx .signupinputBx{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-area .contentBx .formBx .signupinputBx input[type="button"] {
+
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sign up After */
+
+#signupA-area {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    max-width: 600px;
+    height: 650px;
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 10px 12px;
+    border: 1px solid #dcc7b0;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+    margin-top: 50px;
+
+}
+
+#signupA-area .contentBx{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /*스크롤 생성*/
+}
+
+#signupA-area .contentBx .formBx {
+    margin-top: -350px;
+    vertical-align: middle;
+}
+
+
+#signupA-area .contentBx .formBx h2{
     color: #000000;
     text-align: center;
     text-transform: uppercase;
@@ -768,74 +1222,31 @@ footer .copyright{
     margin-bottom: 20px;
     border-bottom: 4px solid #083c81;
     letter-spacing: 1px;
-    margin-top: 20px;
 }
 
-#signup_wrapper .signup_form {
-    width: 100%;
-    margin-top: 50px;
-}
 
-#signup_wrapper .signup_form .input_field {
-
-    margin-bottom: 15px;
-    display: flex;
+#signupA-area .contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+    justify-content: center;
     align-items: center;
-
 }
 
-#signup_wrapper .signup_form .input_field label {
-    width: 200px;
-    font-size: 14px;
-    margin-left: 40px;
-}
 
-#signup_wrapper .signup_form .input_field .input {
+#signup-area .contentBx .formBx .inputBx input{
     width: 100%;
-    border: 1px solid #575757;
-    font-size: 15px;
-    padding: 8px 10x;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    margin-right: 40px;
-    height: 30px;
-}
-
-
-#signup_wrapper .signup_form .text {
-    width: 100%;
-    align-items: center;
-    margin-left: 300px;
-}
-
-#signup_wrapper .signup_form .text p {
-    font-size: 12px;
-}
-
-#signup_wrapper .inputBx input[type="submit"] {
-
-    width: 50%;
     padding: 10px 10px;
+    outline: none;
+    font-weight: 400;
     border: 1px solid #083c81;
     font-size: 16px;
     letter-spacing: 1px;
     color: #222;
     background: transparent;
-    margin-left: 150px;
-    align-items: center;
-    margin-top: 20px;
-    background: #083c81;
-    color: #fff;
-    outline: none;
-    border: none;
-    font-weight: 500;
-    font-size: 18px;
 
 }
 
+#signupA-area .contentBx .formBx input[type="button"] {
 
-
-#login-area .contentBx .formBx .inputBx input[type="button"]{
     background: #083c81;
     color: #fff;
     outline: none;
@@ -843,6 +1254,11 @@ footer .copyright{
     font-weight: 500;
     font-size: 18px;
     cursor: pointer;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45px;
 }
 
 
@@ -860,6 +1276,7 @@ footer .copyright{
     border: 1px solid #dcc7b0;
     border-radius: 25px;
     box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+    margin-top: 50px;
 
 }
 
@@ -869,7 +1286,7 @@ footer .copyright{
     align-items: center;
     width: 100%;
     height: 70vh;
-    background-color: #088178;
+
     position: relative;
     margin: 20px;
     max-height: 600px;
@@ -884,13 +1301,13 @@ footer .copyright{
     margin-bottom: 20px;
     border-bottom: 4px solid #083c81;
     letter-spacing: 1px;
-    margin-top: 20px;
-    background-color: #465b52;
+    /* margin-top: 20px; */
+
 
 }
 
 #mypage-area .contentBx .mypage-form {
-    background-color: #dcc7b0;
+
     align-items: center;
     justify-content: center;
     margin: 20px;
@@ -899,7 +1316,7 @@ footer .copyright{
 }
 
 #mypage-area .contentBx .mypage-form .profile {
-    background-color: red;
+
     display:flex;
     width: 100%;
     height: 20%;
@@ -907,24 +1324,27 @@ footer .copyright{
 }
 
 #mypage-area .contentBx .mypage-form .profile .profile-pic {
-    background-color: orange;
+    background-image: url(img/products/f1.jpg);
     align-items: center;
-    width: 30%;
+    width: 120px;
+    height: 120px;
 }
 
 #mypage-area .contentBx .mypage-form .profile .proflie-name {
-    background-color: yellow;
+
     align-items: center;
     width: 70%;
     font-size: 18px;
     display: flex;
-    align-items: center;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: 500;
 }
 
 #mypage-area .contentBx .mypage-form .mypage-menu {
-    background: greenyellow;
     height: 70%;
-    margin-top: 25px;
+    margin-top: 35px;
 
 }
 
@@ -941,52 +1361,635 @@ footer .copyright{
 }
 
 #mypage-area .contentBx .mypage-form .mypage-menu .menu1 {
-    background-color: skyblue;
+
+    height: 33%;
+    text-decoration: none;
+    border-bottom: 2px solid #083c81;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#mypage-area .contentBx .mypage-form .mypage-menu .menu1 .text {
+    width: 70%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+#mypage-area .contentBx .mypage-form .mypage-menu i {
+    margin-left: 140px;
+}
+
+/* MyPage_Info */
+
+#mypageinfo-area {
+    position: relative;
     width: 100%;
-    height: 25%;
-    text-decoration: none;
-    border-bottom: 2px solid #083c81;
-    letter-spacing: 1px;
+    height: 70vh;
     display: flex;
-    align-items: center;
-    text-align: center;
+    max-width: 600px;
+    height: 650px;
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 10px 12px;
+    border: 1px solid #dcc7b0;
+    border-radius: 25px;
+    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+    margin-top: 50px;
+
 }
 
-#mypage-area .contentBx .mypage-form .mypage-menu .menu2 {
-    background-color: rgb(75, 75, 242);
-    height: 25%;
-    text-decoration: none;
-    border-bottom: 2px solid #083c81;
-    letter-spacing: 1px;
+#mypageinfo-area .contentBx{
+
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /*스크롤 생성*/
 }
 
-#mypage-area .contentBx .mypage-form .mypage-menu .menu3 {
-    background-color: rgb(171, 57, 248);
-    height: 25%;
-    text-decoration: none;
-    border-bottom: 2px solid #083c81;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-#mypage-area .contentBx .mypage-form .mypage-menu .menu4 {
-    background-color: rgb(125, 123, 123);
-    height: 25%;
-    text-decoration-line: none;
-    border-bottom: 2px solid #083c81;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+#mypageinfo-area .contentBx .formBx {
+    margin-top: 60px;
 }
 
 
+#mypageinfo-area .contentBx .formBx h2{
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #083c81;
+    letter-spacing: 1px;
+}
 
+#mypageinfo-area .contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+#mypageinfo-area .contentBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #222;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#mypageinfo-area .contentBx .formBx .inputBx input{
+    width: 100%;
+    padding: 10px 10px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #083c81;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #222;
+    background: transparent;
+
+}
+
+#mypageinfo-area .contentBx .formBx .inputBx input[type="submit"]{
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#mypageinfo-area .contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #0a4ba0;
+}
+
+#mypageinfo-area .contentBx .formBx .remember{
+    margin-bottom: 10px;
+    color: #575757;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+#mypageinfo-area .contentBx .formBx .inputBx p a{
+    color: #083c81;
+}
+
+#mypageinfo-area .contentBx .formBx h4{
+    color: #222;
+    text-align: center;
+    margin: 40px 0 10px;
+    font-weight: 500;
+}
+
+
+#mypageinfo-area .contentBx .formBx .scl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+#mypageinfo-area .contentBx .formBx .scl li{
+    list-style: none;
+    cursor: pointer;
+    justify-content: center;
+
+}
+
+#mypageinfo-area .contentBx .formBx .scl li img{
+    justify-content: center;
+}
+
+#mypageinfo-area .contentBx .formBx .signupinputBx{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mypageinfo-area .contentBx .formBx .signupinputBx input[type="button"] {
+
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MyPage_Like */
+
+#mypage-area .contentBx .mypagelike-form {
+    overflow: auto;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro {
+
+    width: 23%;
+    min-width: 160px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 5px 5px;
+    transition: 0.2s ease;
+    position: relative;
+    display: inline-block;
+
+}
+
+#mypage-area .contentBx .mypagelike-form .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06); /*제품에 마우스 가져갔을 때 그림자*/
+}
+
+#mypage-area .contentBx .mypagelike-form .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro .des h4 {
+    padding-top: 7px;
+    color: #083c81;
+    font-size: 15px;
+    font-weight: 700;
+}
+#mypage-area .contentBx .mypagelike-form .pro .fa-circle-xmark {
+
+    background-color: #c8c8c8;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #ffffff;
+    position: absolute;
+    top: 5px;
+    left: 70px;
+}
+#mypage-area .contentBx .mypagelike-form .pro .fa-circle-xmark::before {
+    display: none;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro .fa-circle-xmark:hover,
+#mypage-area .contentBx .mypagelike-form .pro .fa-circle-xmark::after {
+    background-color: #c8c8c8;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #ffffff;
+    position: absolute;
+    top: 5px;
+    left: 70px;
+}
+
+#mypage-area .contentBx .mypagelike-form .pro .fa-adn{ /*ar피팅 버튼*/
+    width: 30px;
+    height: 30px;
+    background-color: #f7f3e7;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #083c81;
+    border: 1px solid #eae4d3;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+}
+
+#mypage-area .contentBx .mypage_page {
+    display: block;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#mypage-area .contentBx .mypage_page .left {
+    width: 25%;
+    float: left;
+    padding: 3px 0 0 100px;
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    letter-spacing: 0;
+    text-align: left;
+    display: block;
+    vertical-align: middle;
+    display: inline;
+}
+
+
+
+#mypage-area .contentBx .mypage_page .center {
+    width: 50%;
+    float: left;
+    display: block;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    display: inline;
+    margin: 0;
+    padding: 0;
+
+}
+
+#mypage-area .contentBx .mypage_page .center li {
+
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #888;
+    vertical-align: top;
+    display: inline;
+}
+
+#mypage-area .contentBx .mypage_page .center li a {
+
+    margin: 0 2px;
+    padding: 0 5px;
+    color: #888;
+    background: #fff;
+}
+
+#mypage-area .contentBx .mypage_page .right {
+    width: 25%;
+    float: right;
+    padding: 3px 100px 0 0;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    letter-spacing: 0;
+    text-align: right;
+    display: block;
+    vertical-align: middle;
+    display: inline;
+}
+
+#mypage-area .contentBx .mypage_page i {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #888;
+    vertical-align: top;
+
+}
+
+
+/* MyPage_Cart */
+#mypage-area .contentBx {
+    overflow: auto;
+}
+#mypage-area .contentBx ::-webkit-scrollbar  {
+    display: none;
+    /** 스크롤 기능o, 안 보이게 **/
+}
+
+#mypage-area .contentBx .mypagecart-form .cart-pro {
+
+    display:flex;
+    padding: 10px 12px;
+    cursor: pointer;
+    height: 150px;
+    position: relative;
+    width: 100%;
+    display: inline;
+
+
+}
+
+#mypage-area .contentBx .mypagecart-form .cart-pro .pro {
+
+    width: 100%;
+    cursor: pointer;
+    transition: 0.2s ease;
+    position: relative;
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 20px;
+
+}
+
+#mypage-area .contentBx .mypagecart-form .cart-pro .pro i{
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: -7px;
+    font-size: 12px;
+}
+
+#mypage-area .contentBx .mypagecart-form .pro img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 20px;
+}
+
+#mypage-area .contentBx .mypagecart-form .pro .des {
+    text-align: start;
+    padding: 10px 0;
+    margin-left: 20px;
+    width: 50%;
+}
+
+#mypage-area .contentBx .mypagecart-form .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#mypage-area .contentBx .mypagecart-form .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#mypage-area .contentBx .mypagecart-form .pro .des h4 {
+    padding-top: 7px;
+    color: #083c81;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#mypage-area .contentBx .mypagecart-form .pro .des p {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+#mypage-area .contentBx .mypagecart-form .total_price {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+#mypage-area .contentBx .mypagecart-form .total_price h3 {
+    float: left;
+}
+
+#mypage-area .contentBx .mypagecart-form .total_price p {
+    float: right;
+}
+
+#mypage-area .contentBx .mypagecart-form .orderBx {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#mypage-area .contentBx .mypagecart-form .orderBx input {
+    width: 100%;
+    padding: 10px 10px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+#mypage-area .contentBx .mypagecart-form .orderBx input[type="opBtn"]{
+    background:#eae4d3;
+    color:#888;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 5px;
+
+}
+
+#mypage-area .contentBx .mypagecart-form .orderBx input[type="AllBtn"]{
+    background: #083c81;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* MyPage_Order */
+
+#mypage-area .contentBx .mypageorder-form .order-pro {
+
+    display:flex;
+    padding: 10px 12px;
+    border: 1px solid #a0a0a0;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    height: 150px;
+    transition: 0.2s ease;
+    position: relative;
+
+}
+
+#mypage-area .contentBx .mypageorder-form .order-pro .pro {
+
+    width: 80%;
+    cursor: pointer;
+    transition: 0.2s ease;
+    position: relative;
+    display: flex;
+
+}
+
+#mypage-area .contentBx .mypageorder-form .pro img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 20px;
+}
+
+#mypage-area .contentBx .mypageorder-form .pro .des {
+    text-align: start;
+    padding: 10px 0;
+    margin-left: 20px;
+    width: 50%;
+}
+
+#mypage-area .contentBx .mypageorder-form .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#mypage-area .contentBx .mypageorder-form .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#mypage-area .contentBx .mypageorder-form .pro .des h4 {
+    padding-top: 7px;
+    color: #083c81;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#mypage-area .contentBx .mypageorder-form .order-reviewBtn input[type="button"]{
+
+    width: 100px;
+    height: 30px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border: none;
+    margin-top: 50px;
+
+
+}
+
+
+/* Review Area */
+
+
+.review_star_rating{
+    margin-top: 20px;
+
+}
+
+.review_star i{
+    color: #f6cd17;
+
+}
+
+.review_text{
+    margin-top: 15px;
+}
+
+.review_photo{
+    margin-top: 15px;
+}
+
+.review_write_imgBtn{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+#mypage-area .contentBx .review-formBx {
+
+}
+
+
+#mypage-area .contentBx .review-formBx .reviewtext {
+    background-color: #088178;
+    width: 100%;
+    height: 200px;
+}
+
+.noresize {
+    resize: none; /* 사용자 임의 변경 불가 */
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+
+  }
+
+.review_write_Btn {
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+}
+
+.review_write_applyBtn{
+    background-color: #083c81;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border: none;
+}
+.review_write_cancleBtn{
+    width: 100px;
+    height: 30px;
+    background-color: #dfdfe7;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    border: none;
+}
+
+.review_write_star_rating {
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 
 
 
