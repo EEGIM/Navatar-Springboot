@@ -33,4 +33,9 @@ public class Product {
     @Column(name="brand", length=50)
     private String brand;
 
+    @Override
+    public String toString(){
+        return productNo+" "+name+ "입니다.";
+    }
+
 }

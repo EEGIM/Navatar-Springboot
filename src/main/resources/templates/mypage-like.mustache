@@ -1,0 +1,44 @@
+{{>layout/header}}
+
+
+<section id="mypage-area">
+    <div class="contentBx">
+        <h2><i class="fa-solid fa-heart"></i></h2>
+        <div class="mypagelike-form">
+            {{#productList}}
+                <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
+                    <i class="fa-solid fa-circle-xmark" title="삭제"></i>
+                    <img src="{{mainImage}}" alt="">
+                    <div class="des">
+                        <span>{{brand}}</span>
+                        <h5>{{name}}</h5>
+                        <h4>{{normalPrice}}</h4>
+                    </div>
+                    {{#ARFitting}}
+                        <a href="#"><i class="fa-brands fa-adn"></i></a>
+                    {{/ARFitting}}
+                </div>
+            {{/productList}}
+        </div>
+
+        <div class="mypage_page">
+            <div class="left">
+                <a href="?board_no=4&amp;page=2">
+                    <i class="fa-solid fa-angle-left"></i></a>
+            </div>
+            <div class="center">
+                <li class="xans-record-"><a href="?board_no=4&amp;page=1" class="other">1</a></li>
+                <li class="xans-record-"><a href="?board_no=4&amp;page=2" class="other">2</a></li>
+                <li class="xans-record-"><a href="?board_no=4&amp;page=3" class="this">3</a></li>
+                <li class="xans-record-"><a href="?board_no=4&amp;page=4" class="other">4</a></li>
+                <li class="xans-record-"><a href="?board_no=4&amp;page=5" class="other">5</a></li>
+            </div>
+            <div class="right">
+                <a href="?board_no=4&amp;page=4">
+                    <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>layout/footer}}

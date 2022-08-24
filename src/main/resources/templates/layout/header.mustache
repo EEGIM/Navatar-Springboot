@@ -14,6 +14,18 @@
     <!-- 아이콘 사용 링크-->
     <script src="https://kit.fontawesome.com/2a811fae19.js" crossorigin="anonymous"></script>
 
+    <script>
+    function addList(url){ // jQuery 방식으로 수정하기..
+
+        var form = document.createElement("form");
+        form.action = url;
+        form.method = "post";
+        document.body.appendChild(form);
+        form.submit();
+
+    }
+    </script>
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/shop.css">
 </head>
@@ -46,7 +58,7 @@
                     <ul>
                         <li><a href="/users/signin">SIGN IN</a></li>
                         <li><a href="/users/mypage">MY PAGE</a></li>
-                    </ul>s
+                    </ul>
                 </div>
             </li>
 

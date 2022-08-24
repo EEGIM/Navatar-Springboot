@@ -1,0 +1,35 @@
+{{>layout/header}}
+
+<section id="mypage-area">
+    <div class="contentBx">
+        <h2><i class="fa-solid fa-cart-shopping"></i></h2>
+        <div class="mypagecart-form">
+            <div class="cart-pro">
+                {{#productList}}
+                <div class="pro">
+                    <input type="checkbox" class="checkbox" id="" name="">
+                    <i class="fa-solid fa-xmark"></i>
+                    <img src="{{mainImage}}" alt="">
+                    <div class="des">
+                        <span>{{brand}}</span>
+                        <h5>{{name}}</h5>
+                        <p>[옵션: M]</p>
+                        <h4>{{normalPrice}} 원</h4>
+                    </div>
+                </div>
+                {{/productList}}
+            </div>
+            <div class="total_price">
+                <h3>합계</h3>
+                <p><strong>{{price}}</strong>원</p>
+            </div>
+
+            <div class="orderBx">
+                <input type="opBtn" value="선택 상품 주문" name="" onclick="">
+                <input type="AllBtn" value="전체 상품 주문" name="" onclick="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>layout/footer}}

@@ -56,10 +56,10 @@
             <tr class="product_size">
                 <th scope="row"><span style="font-size:12px;color:#555555;">사이즈</span></th>
                 <td>
-                    <select>
+                    <select id="size">
                         <option value="">선택</option>
                         {{#sizes}}
-                            <option>{{size}}</option>
+                            <option value="{{size}}">{{size}}</option>
                         {{/sizes}}
                     </select>
                 </td>
@@ -74,10 +74,10 @@
             </div>
             <div class="line2">
                 <div class="cart_Btn">
-                    <a href="#none" class="Btn-a">Cart</a>
+                    <a href="#" onclick="javascript:addCart('/products/'+{{product.productNo}}+'/cart')" class="Btn-a">Cart</a>
                 </div>
                 <div class="wish_Btn">
-                    <a href="#none" class="Btn-a"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" onclick="javascript:addList('/products/'+{{product.productNo}}+'/like')" class="Btn-a"><i class="fa-regular fa-heart"></i></a>
                 </div>
             </div>
 
@@ -235,7 +235,37 @@
         smallimg[3].onclick = function(){
             MainImg.src = smallimg[3].src;
         }
-    </script>
+</script>
+<script>
+
+//jQuery로 바꾸기
+    function addCart(url){
+        var form = document.createElement("form");
+        var param = new Array();
+        var input = new Array();
+
+        var size_input = document.getElementById("size");
+        var size_value = size_input.options[size_input.selectedIndex].value;
+
+
+        form.action = url;
+        form.method = "post";
+
+        param.push(['productNo', '{{product.productNo}}']);
+        param.push(['size', size_value]);
+
+        for (var i=0; i<param.length; i++){
+            input[i] = document.createElement("input");
+            input[i].setAttribute("type", "hidden");
+            input[i].setAttribute("name", param[i][0]);
+            input[i].setAttribute("value", param[i][1]);
+            form.appendChild(input[i]);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
 
 
 <script src="/js/app/script.js"></script>

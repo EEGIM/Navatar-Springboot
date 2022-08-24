@@ -47,7 +47,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
                 redirectStrategy.sendRedirect(request, response, "/users/signup");
             }
             else if (role.equals(Role.USER)){
-                redirectStrategy.sendRedirect(request, response, "/");
+                redirectStrategy.sendRedirect(request, response, "/users/mypage");
             }
         }
 

@@ -1,0 +1,38 @@
+{{>layout/header}}
+
+<section id="mypageinfo-area">
+    <div class="contentBx">
+        <div class="formBx">
+            <h2><i class="fa-solid fa-user-check"></i></h2>
+            <form action="/users/modify" name="user" method="POST">
+                <div class="inputBx">
+                    <span>이메일 <em> * </em> </span>
+                    <input type="text" value="{{user.email}}" />
+                </div>
+                <div class="inputBx">
+                    <span>이름 *</span>
+                    <input type="text" value="{{user.name}}" />
+                </div>
+                <div class="inputBx">
+                    <span>키 <em> * </em></span>
+                    <input type="text" name="height" value="{{user.height}}" />
+                </div>
+                <div class="inputBx">
+                    <p><em> * </em> AR 피팅을 위해 정확한 정보를 입력해주세요.</p>
+                </div>
+                <div class="inputBx">
+                    <span>몸무게 <em> * </em></span>
+                    <input type="text" name="weight" value="{{user.weight}}" />
+                </div>
+                <div class="inputBx">
+                    <p><em> * </em> AR 피팅을 위해 정확한 정보를 입력해주세요.</p>
+                </div>
+                <div class="signupinputBx">
+                    <input type="submit" value="수정 완료" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{{>layout/footer}}
