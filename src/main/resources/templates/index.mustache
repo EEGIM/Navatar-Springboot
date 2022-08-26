@@ -11,8 +11,9 @@
 <section id="product1" class="section-p1">
     <h2>New Arrivals</h2>
     <p>Summer Collection</p>
+    <br />
     <div class="pro-container">
-        {{#product}}
+    {{#product}}
             <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
                 <img src={{mainImage}} alt="">
                 <div class="des">
@@ -24,17 +25,7 @@
                     <a href="#"><i class="fa-brands fa-adn"></i></a>
                 {{/ARFitting}}
             </div>
-        {{/product}}
-        <div class="pro">
-            <img src="img/products/n1.jpg" alt="">
-            <div class="des">
-                <span>Brand1</span>
-                <h5>Awesome T-Shirts</h5>
-                <h4>30,000</h4>
-            </div>
-            <a href="#"><i class="fa-brands fa-adn"></i></a>
-        </div>
-
+    {{/product}}
     </div>
 </section>
 

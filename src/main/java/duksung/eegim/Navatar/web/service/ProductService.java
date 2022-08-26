@@ -32,7 +32,7 @@ public class ProductService {
         put("apoc", "AP");
         put("lee", "LE");
         put("romanticcrown", "RO");
-        put("mardimercredi", "MA");
+        put("mahagrid", "MA");
         put("luvistrue", "LU");
     }};
 
@@ -48,7 +48,7 @@ public class ProductService {
 
     @Transactional
     public List<ProductDetail> getProductDetail(Long productNo){
-        return (List<ProductDetail>) productDetailRepository.findByProductNoLike(productNo);
+        return (List<ProductDetail>) productDetailRepository.findByProductNo(productNo);
     }
 
     @Transactional

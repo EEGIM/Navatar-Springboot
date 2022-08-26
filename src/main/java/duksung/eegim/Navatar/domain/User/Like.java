@@ -23,7 +23,7 @@ public class Like implements Serializable {
 
     @Id
     @ManyToOne
-    @JoinColumn(name="Product_productNo")
+    @JoinColumn(name="Product_productNo", referencedColumnName = "productno")
     private Product productNo;
 
     @Id

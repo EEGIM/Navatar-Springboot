@@ -1,0 +1,79 @@
+{{>layout/header}}
+
+<section id="product1" class="section-p1">
+    <div class="sidebar">
+        <div class="text">mahagrid</div>
+        <ul>
+            <li><a href="/brands/mahagrid">전체</a></li>
+            <li>
+                <a href="/brands/mahagrid/001">상의</a>
+                <ul>
+                    <li><a href="/brands/mahagrid/001001">반소매티셔츠</a></li>
+                    <li><a href="/brands/mahagrid/001010">긴소매티셔츠</a></li>
+                    <li><a href="/brands/mahagrid/001011">민소매티셔츠</a></li>
+                    <li><a href="/brands/mahagrid/001002">셔츠/블라우스</a></li>
+                    <li><a href="/brands/mahagrid/001003">피케/카라티셔츠</a></li>
+                    <li><a href="/brands/mahagrid/001005">맨투맨, 스웨트셔츠</a></li>
+                    <li><a href="/brands/mahagrid/001004">후드</a></li>
+                    <li><a href="/brands/mahagrid/001006">니트/스웨터</a></li>
+                    <li><a href="/brands/mahagrid/001008">기타 상의</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/brands/mahagrid/003">바지</a>
+                <ul>
+                    <li><a href="/brands/mahagrid/003002">데님팬츠</a></li>
+                    <li><a href="/brands/mahagrid/003007">코튼팬츠</a></li>
+                    <li><a href="/brands/mahagrid/003008">슈트 팬츠/슬랙스</a></li>
+                    <li><a href="/brands/mahagrid/003004">트레이닝/조거팬츠</a></li>
+                    <li><a href="/brands/mahagrid/003009">숏 팬츠</a></li>
+                    <li><a href="/brands/mahagrid/003006">기타 바지</a></li>
+                </ul>
+            </li>
+            <li><a href="/brands/mahagrid/022">스커트</a>
+                <ul>
+                    <li><a href="/brands/mahagrid/022001">미니스커트</a></li>
+                    <li><a href="/brands/mahagrid/022002">미디스커트</a></li>
+                    <li><a href="/brands/mahagrid/022003">롱스커트</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <ul class="location">
+            <li class="location_item">
+                <a href="/" class="location_link">HOME</a>
+            </li>
+            <li class="location_item">
+                <a href="shop.html" class="location_link">SHOP</a>
+            </li>
+            <li class="location_item">
+                <a href="shop_pou.html" class="location_link location_link-active">mahagrid</a>
+            </li>
+        </ul>
+
+        <div class="pro-container">
+            {{#product}}
+                <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
+                    <img src={{mainImage}} alt="">
+                    <div class="des">
+                        <span>{{brand}}</span>
+                        <h5>{{name}}</h5>
+                        <h4>{{normalPrice}}</h4>
+                    </div>
+                    {{#ARFitting}}
+                        <a href="#"><i class="fa-brands fa-adn"></i></a>
+                    {{/ARFitting}}
+                </div>
+            {{/product}}
+        </div>
+    </div>
+</section>
+
+<section id="page" class="section-p1">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#"><i class="fa-solid fa-circle-arrow-right"></i></a>
+</section>
+
+{{>layout/footer}}

@@ -10,13 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -25,8 +24,8 @@ public class UserController {
 
     private final UserService userService;
     private final HttpSession httpSession;
-    private String name = "";
-    private String email = "";
+    private String name = null;
+    private String email = null;
 
     @GetMapping("/users/signup")
     public String getUsersList(Model model){
@@ -105,10 +104,26 @@ public class UserController {
         return "mypage-like";
     }
 
-    @PostMapping("/products/{productNo}/like") // 찜 등록
+    @PostMapping(value = "/products/{productNo}/like") // 찜 등록
     public String likeAdd(@PathVariable Long productNo){
-        userService.addLike(productNo, getUserSession().getEmail());
-        return "redirect:/products/{productNo}";
+//        if (getUserSession() == null){ // 안돼..!
+//            return "/users/signin";
+//        }
+//        else {
+            userService.addLike(productNo, getUserSession().getEmail());
+            return "redirect:/products/{productNo}";
+//        }
+    }
+
+    @GetMapping("/products/{productNo}/like") //로그인 안했을 때 알람 하는 거 수정하기(Securityconfig antMatchers)
+    public String GetlikeAddStatus(Model model){
+        if (getUserSession() == null){ // 안돼..!
+            model.addAttribute("alert", 1);
+        }
+        else {
+            model.addAttribute("alert", 0);
+        }
+        return "product";
     }
 
     @GetMapping("/users/cart")
