@@ -1,11 +1,13 @@
 package duksung.eegim.Navatar.domain.Product;
 
+import duksung.eegim.Navatar.domain.id.ProductDetailId;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@IdClass(ProductDetailId.class)
 @Table(name="productdetail")
 public class ProductDetail {
     @Id
@@ -15,6 +17,7 @@ public class ProductDetail {
     @Column(name="image", length=200)
     private String image;
 
+    @Id
     @Column(name="imgNo", columnDefinition = "INT")
     private int imgNo;
 }
