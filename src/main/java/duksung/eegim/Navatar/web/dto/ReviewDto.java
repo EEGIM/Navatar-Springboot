@@ -38,7 +38,7 @@ public class ReviewDto {
         this.rating = reviewDto.getRating();
         this.productNo = productNo;
         this.cartNo = cartNo;
-        this.satisfaction = satisfactionRepository.getOne(1L); // 임시
+        //this.satisfaction = satisfactionRepository.getOne(1L); // 임시
     }
 
     public Review toEntity(){
