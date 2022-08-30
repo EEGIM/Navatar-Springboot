@@ -1,0 +1,27 @@
+{{>layout/header}}
+
+<section id="mypage-area">
+    <div class="contentBx">
+        <h2><i class="fa-solid fa-cart-shopping"></i></h2>
+        <div class="mypagecart-form">
+            <div class="cart-pro">
+                {{#cartList}}
+                <form action="/reviews/{{cartNo}}/{{product.productNo}}" name="review" method="GET">
+                    <div class="pro">
+                        <img src="{{product.mainImage}}" alt="">
+                        <div class="des">
+                            <span>{{product.brand}}</span>
+                            <h5>{{product.name}}</h5>
+                            <p>[옵션: {{size}}]</p>
+                            <h4>{{product.normalPrice}} 원</h4>
+                        </div>
+                        <input type="submit" value="리뷰 작성" />
+                    </div>
+                </form>
+                {{/cartList}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>layout/footer}}

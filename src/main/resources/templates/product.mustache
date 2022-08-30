@@ -57,7 +57,7 @@
                 <th scope="row"><span style="font-size:12px;color:#555555;">사이즈</span></th>
                 <td>
                     <select id="size">
-                        <option value="">선택</option>
+                        <option value="notSelected">선택</option>
                         {{#sizes}}
                             <option value="{{size}}">{{size}}</option>
                         {{/sizes}}
@@ -70,7 +70,7 @@
 
         <div class="proBtn">
             <div class="line1">
-                <a href="#none" class="Btn-a buy_Btn">Buy Now</a>
+                <a href="#" class="Btn-a buy_Btn">Buy Now</a>
             </div>
             <div class="line2">
                 <div class="cart_Btn">
@@ -114,16 +114,17 @@
             </tr>
             </thead>
             <tbody>
+            {{#reviews}}
             <tr>
-                <td class="num">5</td>
-                <td class="thumb"><a href="product.html"><img src="file:///Users/daeun/Projects/ResponsiveWeb/img/products/n1.jpg" width="50px" height="50px" alt=""><span>상품명 ex.awesome t-shirts</span></a></td>
+                <td class="num">0</td>
                 <td class="subject">
-                    <a href="review_detail.html" style="color:#555555;">ar피팅하고 샀더니 딱 맞아요~</a>
+                    <a href="review_detail.html" style="color:#555555;">{{content}}</a>
                 </td>
-                <td class="writer">닉네임5</td>
-                <td class="txtLess ">2022-08-02</td>
-                <td class="txtLess ">109</td>
+                <td class="writer">작성자</td>
+                <td class="txtLess ">{{createddate}}</td>
+                <td class="txtLess ">{{count}}</td>
             </tr>
+            {{/reviews}}
             <tr>
                 <td class="num">4</td>
                 <td class="thumb"><a href="product.html"><img src="file:///Users/daeun/Projects/ResponsiveWeb/img/products/n1.jpg" width="50px" height="50px" alt=""><span>상품명 ex.awesome t-shirts</span></a></td>
@@ -246,6 +247,11 @@
 
         var size_input = document.getElementById("size");
         var size_value = size_input.options[size_input.selectedIndex].value;
+
+        if (size_value == "notSelected"){
+            alert("사이즈를 선택해주세요.");
+            return;
+        }
 
 
         form.action = url;

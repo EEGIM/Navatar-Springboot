@@ -53,7 +53,7 @@ public class User extends TimeEntity {
         return this;
     }
 
-    public User update(Long weight, Long height){
+    public User update(Long weight, Long height){ //UserService.userUpdate
         this.weight = weight;
         this.height = height;
         this.role = Role.USER;

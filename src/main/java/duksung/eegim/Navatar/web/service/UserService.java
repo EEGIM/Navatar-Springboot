@@ -1,15 +1,11 @@
 package duksung.eegim.Navatar.web.service;
 
 import duksung.eegim.Navatar.domain.Product.Product;
-import duksung.eegim.Navatar.domain.User.Cart;
-import duksung.eegim.Navatar.domain.User.Like;
-import duksung.eegim.Navatar.domain.User.User;
-import duksung.eegim.Navatar.domain.repository.CartRepository;
-import duksung.eegim.Navatar.domain.repository.LikeRepository;
-import duksung.eegim.Navatar.domain.repository.ProductRepository;
-import duksung.eegim.Navatar.domain.repository.UserRepository;
+import duksung.eegim.Navatar.domain.User.*;
+import duksung.eegim.Navatar.domain.repository.*;
 import duksung.eegim.Navatar.web.dto.CartDto;
 import duksung.eegim.Navatar.web.dto.LikeDto;
+import duksung.eegim.Navatar.web.dto.ReviewDto;
 import duksung.eegim.Navatar.web.dto.UserRegisterDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,6 +24,8 @@ public class UserService {
     private LikeRepository likeRepository;
     private ProductRepository productRepository;
     private CartRepository cartRepository;
+    private ReviewRepository reviewRepository;
+    private SatisfactionRepository satisfactionRepository;
 
     public List<User> getUsers() {
         return (List<User>) userRepository.findAll();
@@ -45,7 +43,7 @@ public class UserService {
                                 .orElseThrow(() -> new IllegalArgumentException("해당 회원이 없습니다." + email));
 
         System.out.println("몸무게:" +registerDto.getWeight()+ " 키:"+ registerDto.getHeight());
-        user.update(registerDto.getWeight(), registerDto.getHeight());
+//        user.update(registerDto.getWeight(), registerDto.getHeight());
         return email;
 
     }
@@ -84,9 +82,11 @@ public class UserService {
     }
 
     @Transactional
-    public void addCart(CartDto requestDto, String email){
+    public void addCart(CartDto requestDto, String email, Long productNo){
         CartDto cartDto = requestDto;
         cartDto.setUserNo(getUser(email).getUserno());
+        cartDto.setProduct(productRepository.findByProductNo(productNo));
+
         cartRepository.save(cartDto.toEntity());
     }
 
@@ -97,12 +97,24 @@ public class UserService {
     }
 
     @Transactional
-    public List<Product> getCartList(List<Cart> cartList){
-        List<Product> products = new ArrayList<>();
-        for (Cart c : cartList){
-            products.add(productRepository.findByProductNo(c.getProductNo()));
-        }
-        return products;
+    public void deleteFromCart(Long cartNo){
+        cartRepository.deleteById(cartNo);
+    }
+
+    @Transactional
+    public Review review(Long cartNo){
+        return reviewRepository.findByCartNo(cartNo).map(entity-> entity).orElse(null);
+    }
+
+    @Transactional
+    public void writeReview(ReviewDto requestDto, Long cartNo, Long productNo){
+
+        Review review = reviewRepository.findByCartNo(cartNo)
+                .map(entity -> entity.update(requestDto.getRating(), requestDto.getContent()))
+                .orElseGet(()-> {
+                    ReviewDto reviewDto = new ReviewDto(requestDto, cartNo, productNo);
+                    return reviewRepository.save(reviewDto.toEntity());
+                });
     }
 
     @Transactional // 이거는 진짜 바꾸기 (가격 계산 위한 임시 함수)

@@ -4,6 +4,7 @@ import duksung.eegim.Navatar.config.auth.dto.SessionUser;
 import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.User.Cart;
 import duksung.eegim.Navatar.web.dto.CartDto;
+import duksung.eegim.Navatar.web.dto.ReviewDto;
 import duksung.eegim.Navatar.web.dto.UserRegisterDto;
 import duksung.eegim.Navatar.web.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Controller
@@ -129,17 +131,42 @@ public class UserController {
     @GetMapping("/users/cart")
     public String userCart(Model model){
         List<Cart> cartList = userService.getCart(getUserSession().getEmail());
-        List<Product> products =userService.getCartList(cartList);
-        model.addAttribute("productList", products);
+        model.addAttribute("cartList", cartList);
         // model.addAttribute("cartList", cartList); // 장바구니도 그냥 찜처럼 이 안에 담고 있는게 낫겠다.
-        model.addAttribute("price", userService.getPrice(products));
+        model.addAttribute("price", userService.getPrice(cartList.stream()
+                .map(entity -> entity.getProduct()).collect(Collectors.toList())));
         return "mypage-cart";
     }
 
+    @GetMapping("/users/review")
+    public String userReview(Model model){
+        List<Cart> cartList = userService.getCart(getUserSession().getEmail());
+        model.addAttribute("cartList", cartList);
+        return "mypagereview";
+    }
+
+    @GetMapping("/reviews/{cartNo}/{productNo}")
+    public String ReviewPage(Model model, @PathVariable Long cartNo, @PathVariable Long productNo){
+        model.addAttribute("review", userService.review(cartNo));
+        return "review";
+    }
+
+    @PostMapping("/reviews/{cartNo}/{productNo}")
+    public String WriteReview(ReviewDto reviewDto, @PathVariable Long cartNo, @PathVariable Long productNo){
+        userService.writeReview(reviewDto, cartNo, productNo);
+        return "redirect:/users/review";
+    }
+
     @PostMapping("/products/{productNo}/cart")
-    public String AddToCart(CartDto requestDto){
-        userService.addCart(requestDto, getUserSession().getEmail());
+    public String AddToCart(CartDto requestDto, @PathVariable Long productNo){
+        userService.addCart(requestDto, getUserSession().getEmail(), productNo);
         return "redirect:/products/{productNo}";
+    }
+
+    @PostMapping("/users/cart/{cartNo}/delete")
+    public String DeleteFromCart(@PathVariable Long cartNo){
+        userService.deleteFromCart(cartNo);
+        return "redirect:/users/cart";
     }
 
     private SessionUser getUserSession(){

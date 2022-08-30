@@ -5,19 +5,21 @@
         <h2><i class="fa-solid fa-cart-shopping"></i></h2>
         <div class="mypagecart-form">
             <div class="cart-pro">
-                {{#productList}}
+                {{#cartList}}
                 <div class="pro">
                     <input type="checkbox" class="checkbox" id="" name="">
-                    <i class="fa-solid fa-xmark"></i>
-                    <img src="{{mainImage}}" alt="">
+                    <div onclick="javascript:deleteBtn('/users/cart/'+{{cartNo}}+'/delete')">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <img src="{{product.mainImage}}" alt="">
                     <div class="des">
-                        <span>{{brand}}</span>
-                        <h5>{{name}}</h5>
-                        <p>[옵션: M]</p>
-                        <h4>{{normalPrice}} 원</h4>
+                        <span>{{product.brand}}</span>
+                        <h5>{{product.name}}</h5>
+                        <p>[옵션: {{size}}]</p>
+                        <h4>{{product.normalPrice}} 원</h4>
                     </div>
                 </div>
-                {{/productList}}
+                {{/cartList}}
             </div>
             <div class="total_price">
                 <h3>합계</h3>

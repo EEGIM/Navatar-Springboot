@@ -21,6 +21,7 @@ public class ProductController {
         model.addAttribute("product", productService.getProduct(pno));
         model.addAttribute("details", productService.getProductDetail(pno));
         model.addAttribute("sizes", productService.getSize(pno));
+        model.addAttribute("reviews", productService.getReviews(pno));
         return "product";
     }
 

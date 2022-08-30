@@ -3,9 +3,11 @@ package duksung.eegim.Navatar.web.service;
 import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.Product.ProductDetail;
 import duksung.eegim.Navatar.domain.Product.ProductSize;
+import duksung.eegim.Navatar.domain.User.Review;
 import duksung.eegim.Navatar.domain.repository.ProductDetailRepository;
 import duksung.eegim.Navatar.domain.repository.ProductRepository;
 import duksung.eegim.Navatar.domain.repository.ProductSizeRepository;
+import duksung.eegim.Navatar.domain.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,9 @@ public class ProductService {
 
     @Autowired
     private ProductSizeRepository productSizeRepository;
+
+    @Autowired
+    private ReviewRepository reviewRepository;
 
     HashMap<String, String> brand_code = new HashMap<String, String>(){{
         put("apoc", "AP");
@@ -72,4 +77,8 @@ public class ProductService {
         return (List<Product>) productRepository.findByCategoryCodeLike("%"+code+"%");
     }
 
+    @Transactional
+    public List<Review> getReviews(Long productNo){
+        return reviewRepository.findByProductNo(productNo);
+    }
 }

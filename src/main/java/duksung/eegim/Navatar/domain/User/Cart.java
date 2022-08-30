@@ -1,5 +1,6 @@
 package duksung.eegim.Navatar.domain.User;
 
+import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.TimeEntity;
 import lombok.Builder;
 import lombok.Data;
@@ -25,16 +26,17 @@ public class Cart extends TimeEntity {
     @Column(name="size", length=10)
     private String size;
 
-    @Column(name="Product_productNo", columnDefinition = "INT")
-    private Long productNo;
+    @ManyToOne
+    @JoinColumn(name="Product_productNo")
+    private Product product;
 
     @Column(name="User_userNo", columnDefinition = "INT")
     private Long userNo;
 
     @Builder
-    public Cart(Long cartNo, Long productNo, Long userNo, int count, String size){
+    public Cart(Long cartNo, Product product, Long userNo, int count, String size){
         this.cartNo = cartNo;
-        this.productNo = productNo;
+        this.product = product;
         this.userNo = userNo;
         this.count = count;
         this.size = size;
