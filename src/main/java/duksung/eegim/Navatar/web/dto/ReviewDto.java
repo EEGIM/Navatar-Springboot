@@ -33,7 +33,7 @@ public class ReviewDto {
     }
 
     @Builder
-    public ReviewDto(ReviewDto reviewDto, Long productNo, Long cartNo){
+    public ReviewDto(ReviewDto reviewDto, Long cartNo, Long productNo){
         this.content = reviewDto.getContent();
         this.rating = reviewDto.getRating();
         this.productNo = productNo;
