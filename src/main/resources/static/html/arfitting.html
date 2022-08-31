@@ -22,7 +22,7 @@
 
         <div>
             <ul id = "navbar">
-                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/">Home</a></li>
 
                 <li><a>Shop</a>
                 <div class="sub-bar">
@@ -36,29 +36,29 @@
                 </div>
                 </li>
 
-                <li><a class="active" href="arfitting.html">AR Fitting</a></li>
-                <li><a href="foryou.html">For You</a></li>
-                <li><a href="about.html">About</a></li>
-                <li id="loginicon"><a href="/users/signin"><i class="fa-solid fa-user"></i></a></li>
-                <!-- <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
+                <li><a href="/html/arfitting.html">AR Fitting</a></li>
+                <li><a href="/html/foryou.html">For You</a></li>
+                <li><a href="/html/about.html">About</a></li>
+                <li id="loginicon"><a><i class="fa-solid fa-user"></i></a>
+                    <div class="sub-bar2">
+                        <ul>
+                            <li><a href="/users/signin">SIGN IN</a></li>
+                            <li><a href="/users/mypage">MY PAGE</a></li>
+                        </ul>
+                    </div>
+                </li>
+
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </div>
         <div id="tab">
-            <a href="login.html"><i class="fa-solid fa-user"></i></a>
             <i id="bar" class="fa-solid fa-bars"></i>
         </div>
+
     </section>
 
-    <section id="arfit-logo">
-        <div>
-            <img src="/img/logo.png" class="logo" alt="" width=150px>
-        </div>
-    </section>
-
-    
     <section id="arfit">
-        유니티 화면 나오는 곳
+
     </section>
 
 
@@ -87,5 +87,23 @@
     
 
     <script src="/js/app/script.js"></script>
+    <script>
+    const bar = document.getElementById('bar');
+    const nav = document.getElementById('navbar');
+    const close = document.getElementById('close');
+
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active')
+        })
+    }
+
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active')
+        })
+    }
+    </script>
 </body>
 </html>

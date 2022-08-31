@@ -37,4 +37,9 @@ public class ProductController {
         return brand;
     }
 
+    // arfitting
+    @GetMapping("/arfitting/{productNo}")
+    public String ARFitting(){
+        return "/html/arfitting.html";
+    }
 }
