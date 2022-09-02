@@ -19,7 +19,10 @@
 <body>
     <section id="header">
         <a href="/"><img src="/img/logo.png" class="logo" alt="" width=150px></a>
-
+        <div class="header-icon">
+            <i class="fa-solid fa-arrow-left" onClick="history.go(-1)"></i>
+            <a href="/" id="home"><i class="fa-solid fa-house"></i></a>
+        </div>
         <div>
             <ul id = "navbar">
                 <li><a href="/">Home</a></li>
@@ -86,7 +89,7 @@
     </footer>
     
 
-    <script src="/js/app/script.js"></script>
+    <script src="/jsapp/script.js"></script>
     <script>
     const bar = document.getElementById('bar');
     const nav = document.getElementById('navbar');

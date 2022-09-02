@@ -1,3 +1,4 @@
+{{>layout/head}}
 {{>layout/header}}
 
 <section id="prodetails" class="section-p1">
@@ -19,7 +20,7 @@
             </div>
         </div>
         {{#product.ARFitting}}
-            <a href="/arfitting/{{product.productNo}}"><i class="fa-brands fa-adn"></i></a>
+            <a href="/arfitting/{{product.productNo}}"><i class="fa-brands fa-adn" title="AR 피팅으로 이동하기"></i></a>
         {{/product.ARFitting}}
     </div>
 
@@ -42,19 +43,19 @@
         <table>
             <tbody>
             <tr class="product_name">
-                <th scope="row"><span style="font-size:12px;color:#555555;">제품명</span></th>
-                <td><span style="font-size:12px;color:#555555;">{{product.name}}</span></td>
+                <th scope="row"><span style="color:#555555;">제품명</span></th>
+                <td><span style="color:#555555;">{{product.name}}</span></td>
             </tr>
             <tr class="product_price">
-                <th scope="row"><span style="font-size:12px;color:#555555;">판매가</span></th>
-                <td><span style="font-size:12px;color:#555555;">{{product.normalPrice}}원</span></td>
+                <th scope="row"><span style="color:#555555;">판매가</span></th>
+                <td><span style="color:#555555;">{{product.normalPrice}}원</span></td>
             </tr>
             <tr class="product_brand">
-                <th scope="row"><span style="font-size:12px;color:#555555;">브랜드</span></th>
-                <td><span style="font-size:12px;color:#555555;">{{product.brand}}</span></td>
+                <th scope="row"><span style="color:#555555;">브랜드</span></th>
+                <td><span style="color:#555555;">{{product.brand}}</span></td>
             </tr>
             <tr class="product_size">
-                <th scope="row"><span style="font-size:12px;color:#555555;">사이즈</span></th>
+                <th scope="row"><span style="color:#555555;">사이즈</span></th>
                 <td>
                     <select id="size">
                         <option value="notSelected">선택</option>
@@ -74,10 +75,10 @@
             </div>
             <div class="line2">
                 <div class="cart_Btn">
-                    <a href="#" onclick="javascript:addCart('/products/'+{{product.productNo}}+'/cart')" class="Btn-a">Cart</a>
+                    <a href="#" onclick="javascript:addCart('/products/{{product.productNo}}/cart')" class="Btn-a">Cart</a>
                 </div>
                 <div class="wish_Btn">
-                    <a href="#" onclick="javascript:addList('/products/'+{{product.productNo}}+'/like')" class="Btn-a"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" onclick="javascript:addList('/products/{{product.productNo}}/like')" class="Btn-a"><i class="fa-regular fa-heart"></i></a>
                 </div>
             </div>
 
@@ -110,7 +111,7 @@
                 <th style="width:auto;" scope="col">제목</th>
                 <th style="width:15%;" scope="col">작성자</th>
                 <th style="width:15%;" scope="col" class="">작성일</th>
-                <th style="width:7%;" scope="col" class="">조회수</th>
+                <th style="width:8%;" scope="col" class="">조회수</th>
             </tr>
             </thead>
             <tbody>
@@ -239,61 +240,6 @@
         }
 </script>
 <script>
-
-//jQuery로 바꾸기
-    function addCart(url){
-        var form = document.createElement("form");
-        var param = new Array();
-        var input = new Array();
-
-        var size_input = document.getElementById("size");
-        var size_value = size_input.options[size_input.selectedIndex].value;
-
-        if (size_value == "notSelected"){
-            alert("사이즈를 선택해주세요.");
-            return;
-        }
-
-
-        form.action = url;
-        form.method = "post";
-
-        param.push(['productNo', '{{product.productNo}}']);
-        param.push(['size', size_value]);
-
-        for (var i=0; i<param.length; i++){
-            input[i] = document.createElement("input");
-            input[i].setAttribute("type", "hidden");
-            input[i].setAttribute("name", param[i][0]);
-            input[i].setAttribute("value", param[i][1]);
-            form.appendChild(input[i]);
-        }
-
-        document.body.appendChild(form);
-        form.submit();
-
-        alert("장바구니에 상품을 등록했습니다!");
-    }
-</script>
-
-<script>
-    const bar = document.getElementById('bar');
-    const nav = document.getElementById('navbar');
-    const close = document.getElementById('close');
-
-
-    if (bar) {
-        bar.addEventListener('click', () => {
-            nav.classList.add('active')
-        })
-    }
-
-    if (close) {
-        close.addEventListener('click', () => {
-            nav.classList.remove('active')
-        })
-    }
-
     /* 리뷰 별 선택하기 */
     const allStars = document.querySelectorAll('.star');
 
@@ -311,7 +257,6 @@
                     })
                 }
             })
-    </script>
-<script src="/js/app/script.js"></script>
+</script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<script>
+    function addCart(url){
+        var form = document.createElement("form");
+        var param = new Array();
+        var input = new Array();
+
+        var size_input = document.getElementById("size");
+        var size_value = size_input.options[size_input.selectedIndex].value;
+
+        if (size_value == "notSelected"){
+            alert("사이즈를 선택해주세요.");
+            return;
+        }
+
+
+        form.action = url;
+        form.method = "post";
+
+        param.push(['productNo', '{{product.productNo}}']);
+        param.push(['size', size_value]);
+
+        for (var i=0; i<param.length; i++){
+            input[i] = document.createElement("input");
+            input[i].setAttribute("type", "hidden");
+            input[i].setAttribute("name", param[i][0]);
+            input[i].setAttribute("value", param[i][1]);
+            form.appendChild(input[i]);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+
+        alert("장바구니에 상품을 등록했습니다!");
+    }
+</script>

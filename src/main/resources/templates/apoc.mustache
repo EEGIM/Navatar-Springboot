@@ -1,6 +1,24 @@
-{{>layout/header}}
+{{>layout/head}}
+{{>layout/js/shop-highlights}}
+</head>
+<body>
+<section id="header">
+    <a href="/"><img src="/img/logo.png" class="logo" alt="" width=150px></a>
 
-<section id="product1" class="section-p1">
+    <div class="shopheaderpou">
+
+        <div class="header-icon">
+            <i class="fa-solid fa-arrow-left" onClick="history.go(-1)"></i>
+            <a href="/" id="home"><i class="fa-solid fa-house"></i></a>
+        </div>
+
+        <div class="shop-name">
+            <h3>APIECEOFCAKE</h3>
+        </div>
+    </div>
+    {{>layout/nav}}
+
+    <section id="product1" class="section-p1">
     <div class="sidebar">
         <div class="text">APIECEOFCAKE</div>
         <ul>
@@ -66,14 +84,15 @@
                     {{/ARFitting}}
                 </div>
             {{/product}}
+            <div id="page" class="section-p1">
+                <a href="#"><i class="fa-solid fa-circle-arrow-left"></i></a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#"><i class="fa-solid fa-circle-arrow-right"></i></a>
+            </div>
         </div>
     </div>
-</section>
+    </section>
 
-<section id="page" class="section-p1">
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#"><i class="fa-solid fa-circle-arrow-right"></i></a>
-</section>
-
-{{>layout/footer}}
+    {{>layout/footer}}

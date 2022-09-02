@@ -1,0 +1,20 @@
+<script>
+    function addList(url){ // jQuery 방식으로 수정하기..
+
+        var form = document.createElement("form");
+        form.action = url;
+        form.method = "post";
+        document.body.appendChild(form);
+        form.submit();
+        alert("찜 목록에 상품을 등록했습니다!"); // --> 이거는 리다이렉션 되고 나서 해야 할 듯..
+
+    }
+
+    function deleteBtn(url){
+        var form = document.createElement("form");
+        form.action = url;
+        form.method = "post";
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
