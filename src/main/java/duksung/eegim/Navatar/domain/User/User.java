@@ -38,18 +38,23 @@ public class User extends TimeEntity {
     @Column(name="role", length=45)
     private Role role;
 
+    @Column(name="picture", length=450)
+    private String picture;
+
     @Builder
-    public User(Long userno, String name, String email, Long weight, Long height, Role role){
+    public User(Long userno, String name, String email, String picture, Long weight, Long height, Role role){
         this.userno = userno;
         this.name = name;
         this.email = email;
+        this.picture = picture;
         this.weight = weight;
         this.height = height;
         this.role = role;
     }
 
-    public User update(String name){ // 리소스 서버에서의 정보 변경
+    public User update(String name, String picture){ // 리소스 서버에서의 정보 변경
         this.name = name;
+        this.picture = picture;
         return this;
     }
 

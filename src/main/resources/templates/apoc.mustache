@@ -80,9 +80,12 @@
                         <h4>{{normalPrice}}</h4>
                     </div>
                     {{#ARFitting}}
-                        <a href="#"><i class="fa-brands fa-adn"></i></a>
+                        <a href="/arfitting/{{productNo}}"><i class="fa-brands fa-adn"></i></a>
                     {{/ARFitting}}
                 </div>
+            {{/product}}
+            {{^product}}
+                <h1>해당 카테고리에 해당하는 상품이 없습니다.</h1>
             {{/product}}
             <div id="page" class="section-p1">
                 <a href="#"><i class="fa-solid fa-circle-arrow-left"></i></a>

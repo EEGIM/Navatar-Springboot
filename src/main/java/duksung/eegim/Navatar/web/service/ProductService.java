@@ -46,6 +46,16 @@ public class ProductService {
         return (List<Product>) productRepository.findAll();
 
     }
+
+    @Transactional
+    public List<Product> getList(List<Long> products){
+        List<Product> productList = new ArrayList<Product>();
+        for (Long p : products){ // 이부분 다시 해보기
+            productList.add(productRepository.findByProductNo(p));
+        }
+        return productList;
+    }
+
     @Transactional
     public Product getProduct(Long productNo){
         return productRepository.findByProductNo(productNo);

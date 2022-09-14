@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -126,6 +127,25 @@ public class UserService {
         return price;
     }
 
+    @Transactional
+    public HashMap<String, Long> getSizeInfo(String email){
+        User user = getUser(email);
+        HashMap<String, Long> info = new HashMap<String, Long>();
+        info.put("height", user.getHeight());
+        info.put("weight", user.getWeight());
+        return info;
+    }
+
+    @Transactional
+    public List<Product> getSizeRecommand(String email) {
+        HashMap<String, Long> info = getSizeInfo(email);
+        List<Long> products = satisfactionRepository.getProductNoList(info.get("height"), info.get("weight"));
+        List<Product> productList = new ArrayList<Product>();
+        for (Long p : products){ // 이부분 다시 해보기 + 느림..
+            productList.add(productRepository.findByProductNo(p));
+        }
+        return productList;
+    }
 
 
 }

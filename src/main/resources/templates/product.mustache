@@ -1,24 +1,11 @@
 {{>layout/head}}
+{{>layout/js/shop-highlights}}
 {{>layout/header}}
 
 <section id="prodetails" class="section-p1">
     <div class="single-pro-image">
         <img src="{{product.mainImage}}" width="100%" id="MainImg" alt="">
 
-        <div class="small-img-group">
-            <div class="small-img-col">
-                <img src="img/products/n1.jpg" width="100%" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="img/products/n2.jpg" width="100%" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="img/products/n3.jpg" width="100%" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="img/products/n4.jpg" width="100%" class="small-img" alt="">
-            </div>
-        </div>
         {{#product.ARFitting}}
             <a href="/arfitting/{{product.productNo}}"><i class="fa-brands fa-adn" title="AR 피팅으로 이동하기"></i></a>
         {{/product.ARFitting}}
@@ -221,23 +208,23 @@
     </div>
 </footer>
 
-<!--작은 이미지 선택하면 큰 이미지로 보이게 바꾸기-->
 <script>
-        var MainImg = document.getElementById("MainImg");
-        var smallimg = document.getElementsByClassName("small-img");
+    const bar = document.getElementById('bar');
+    const nav = document.getElementById('navbar');
+    const close = document.getElementById('close');
 
-        smallimg[0].onclick = function(){
-            MainImg.src = smallimg[0].src;
-        }
-        smallimg[1].onclick = function(){
-            MainImg.src = smallimg[1].src;
-        }
-        smallimg[2].onclick = function(){
-            MainImg.src = smallimg[2].src;
-        }
-        smallimg[3].onclick = function(){
-            MainImg.src = smallimg[3].src;
-        }
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active')
+        })
+    }
+
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active')
+        })
+    }
 </script>
 <script>
     /* 리뷰 별 선택하기 */

@@ -1,0 +1,47 @@
+{{>layout/head}}
+<script>
+     window.onload = function(){
+        document.getElementById('foryouhightlight').classList.add('active');
+    }
+</script>
+{{>layout/header}}
+
+
+<section id="foryou" class="section-p1">
+    <div class="container">
+        <ul class="location">
+            <li class="location_item">
+                <a href="/" class="location_link">HOME</a>
+            </li>
+            <li class="location_item">
+                <a href="/foryou" class="location_link location_link-active">FOR YOU</a>
+            </li>
+        </ul>
+        <h2>{{userName}} 회원님을 위한 나바타의 추천</h2>
+
+        <div class="pro-container">
+            {{#products}}
+                <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
+                    <img src={{mainImage}} alt="">
+                    <div class="des">
+                        <span>{{brand}}</span>
+                        <h5>{{name}}</h5>
+                        <h4>{{normalPrice}}</h4>
+                    </div>
+                    {{#ARFitting}}
+                        <a href="/arfitting/{{productNo}}"><i class="fa-brands fa-adn"></i></a>
+                    {{/ARFitting}}
+                </div>
+            {{/products}}
+            <div id="page" class="section-p1">
+                <a href="#"><i class="fa-solid fa-circle-arrow-left"></i></a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#"><i class="fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>layout/footer}}

@@ -28,6 +28,7 @@ public class UserController {
     private final HttpSession httpSession;
     private String name = null;
     private String email = null;
+    private String picture = null;
 
     @GetMapping("/users/signup")
     public String getUsersList(Model model){
@@ -94,9 +95,13 @@ public class UserController {
         if (user != null) {
             email = user.getEmail();
             name = user.getName();
+            picture = user.getPicture();
+            System.out.println(picture);
             model.addAttribute("userName", user.getName());
+            model.addAttribute("userPicture", user.getPicture());
         }
-        model.addAttribute("userName", name);
+        model.addAttribute("userPicture", picture);
+
         return "mypage";
     }
 
@@ -167,6 +172,13 @@ public class UserController {
     public String DeleteFromCart(@PathVariable Long cartNo){
         userService.deleteFromCart(cartNo);
         return "redirect:/users/cart";
+    }
+
+    @GetMapping("/foryou")
+    public String recommandProduct(Model model){
+        model.addAttribute("products", userService.getSizeRecommand(getUserSession().getEmail()));
+        model.addAttribute("userName", getUserSession().getName());
+        return "foryou";
     }
 
     private SessionUser getUserSession(){
