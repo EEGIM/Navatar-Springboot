@@ -1,0 +1,38 @@
+{{>layout/head}}
+{{>layout/js/shop-highlights}}
+{{>layout/header}}
+
+
+<section id="reviewdetails">
+    {{#review}}
+    <div class="contentBx">
+        <div class="reviewdRead">
+            <div class="title">
+                <h3>상품명</h3>
+            </div>
+            <div class="info ">
+                <p class="writer">{{userName}}</p>
+                <p class="regdate">{{createddate}}</p>
+                <p class="rating">
+                    <img src="http://img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{{rating}}.png" alt="{{rating}}점"></p>
+            </div>
+
+            <div class="content">
+                <div class="fr-view fr-view-article">
+                    신  장 : {{satisfaction.height}}cm<br><br>
+                    몸무게 : {{satisfaction.weight}}kg<br><br>
+                    구매 사이즈 : {{satisfaction.size}} / {{satisfaction.sizeSatisfaction}}<br><br>
+                    후기내용 : {{content}}
+                </div>
+            </div>
+        </div>
+        <div class="reviewbtnArea">
+            <span class="modify"><a href="#">수정</a></span>
+            <span class="delete"><a href="#">삭제</a></span>
+            <span class="list"><a href="#">상품으로 돌아가기</a></span>
+        </div>
+    </div>
+        {{/review}}
+</section>
+
+{{>layout/footer}}

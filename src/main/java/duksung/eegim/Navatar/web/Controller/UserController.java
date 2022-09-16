@@ -5,7 +5,9 @@ import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.User.Cart;
 import duksung.eegim.Navatar.web.dto.CartDto;
 import duksung.eegim.Navatar.web.dto.ReviewDto;
+import duksung.eegim.Navatar.web.dto.SatisfactionReviewDto;
 import duksung.eegim.Navatar.web.dto.UserRegisterDto;
+import duksung.eegim.Navatar.web.service.ProductService;
 import duksung.eegim.Navatar.web.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 public class UserController {
 
     private final UserService userService;
+    private final ProductService productService;
     private final HttpSession httpSession;
     private String name = null;
     private String email = null;
@@ -153,13 +156,21 @@ public class UserController {
     @GetMapping("/reviews/{cartNo}/{productNo}")
     public String ReviewPage(Model model, @PathVariable Long cartNo, @PathVariable Long productNo){
         model.addAttribute("review", userService.review(cartNo));
+        model.addAttribute("user", userService.getUser(getUserSession().getEmail()));
+        model.addAttribute("cart", userService.getCart(cartNo));
         return "review";
     }
 
     @PostMapping("/reviews/{cartNo}/{productNo}")
-    public String WriteReview(ReviewDto reviewDto, @PathVariable Long cartNo, @PathVariable Long productNo){
-        userService.writeReview(reviewDto, cartNo, productNo);
+    public String WriteReview(SatisfactionReviewDto satisfactionReviewDto){
+        userService.writeReview(satisfactionReviewDto);
         return "redirect:/users/review";
+    }
+
+    @GetMapping("/reviews/{reviewNo}")
+    public String getReviewDetail(Model model, @PathVariable Long reviewNo){
+        model.addAttribute("review", userService.getReview(reviewNo));
+        return "review-detail";
     }
 
     @PostMapping("/products/{productNo}/cart")

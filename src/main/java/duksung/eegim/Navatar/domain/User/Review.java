@@ -36,8 +36,11 @@ public class Review extends TimeEntity {
     @JoinColumn(name="Satisfaction_pk")
     private Satisfaction satisfaction;
 
+    @Column(name="userName", length = 45)
+    private String userName;
+
     @Builder
-    public Review(Long reviewNo, String content, int count, int rating, Long productNo, Long cartNo, Satisfaction satisfaction){
+    public Review(Long reviewNo, String content, int count, int rating, Long productNo, Long cartNo, Satisfaction satisfaction, String userName){
         this.reviewNo = reviewNo;
         this.content = content;
         this.count = count;
@@ -45,6 +48,7 @@ public class Review extends TimeEntity {
         this.productNo = productNo;
         this.cartNo = cartNo;
         this.satisfaction = satisfaction;
+        this.userName = userName;
 
     }
 

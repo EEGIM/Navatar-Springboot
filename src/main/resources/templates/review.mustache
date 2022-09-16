@@ -7,12 +7,24 @@
         <div class="review-formBx">
         <form action="/reviews/{{cartNo}}/{{productNo}}" name="review" method="POST">
             <div class="review_write_star_rating">
+                <input type="hidden" name="cartNo" value="{{cartNo}}"/>
+                <input type="hidden" name="productNo" value="{{productNo}}" />
+                <input type="hidden" name="size" value="{{cart.size}}" />
+                <input type="hidden" name="userName" value="{{user.name}}" />
+
                 <input type="radio" name="rating" value="1" class="star"><i class="fa-regular fa-star"></i></input>
                 <input type="radio" name="rating" value="2" class="star"><i class="fa-regular fa-star"></i></input>
                 <input type="radio" name="rating" value="3" class="star"><i class="fa-regular fa-star"></i></input>
                 <input type="radio" name="rating" value="4" class="star"><i class="fa-regular fa-star"></i></input>
                 <input type="radio" name="rating" value="5" class="star"><i class="fa-regular fa-star"></i></input>
             </div>
+            <div class="review_write_star_rating">
+                <input type="radio" name="sizeSatisfaction" value="SMALL" class="star">작음<i class="fa-regular fa-star"></i></input>
+                <input type="radio" name="sizeSatisfaction" value="FIT" class="star">적당함<i class="fa-regular fa-star"></i></input>
+                <input type="radio" name="sizeSatisfaction" value="BIG" class="star">큼<i class="fa-regular fa-star"></i></input>
+            </div>
+            키: <input type="text" name="height" value="{{user.height}}"/>cm
+            체중: <input type="text" name="weight" value="{{user.weight}}"/>kg
 
             <div class="reviewtext">
                 <textarea class="noresize" name="content" placeholder="리뷰를 작성해주세요.">{{#review}}{{review.content}}{{/review}}{{^review}}{{/review}}</textarea>

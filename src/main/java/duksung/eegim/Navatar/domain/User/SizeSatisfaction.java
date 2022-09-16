@@ -8,8 +8,8 @@ import lombok.RequiredArgsConstructor;
 public enum SizeSatisfaction {
     NONE("."),
     SMALL("작음"),
-    FIT("적당함"),
-    BIG("큼");
+    BIG("큼"),
+    FIT("적당함"),;
     private final String title;
 
 }

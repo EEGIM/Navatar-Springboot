@@ -3,10 +3,7 @@ package duksung.eegim.Navatar.web.service;
 import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.User.*;
 import duksung.eegim.Navatar.domain.repository.*;
-import duksung.eegim.Navatar.web.dto.CartDto;
-import duksung.eegim.Navatar.web.dto.LikeDto;
-import duksung.eegim.Navatar.web.dto.ReviewDto;
-import duksung.eegim.Navatar.web.dto.UserRegisterDto;
+import duksung.eegim.Navatar.web.dto.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -98,6 +95,11 @@ public class UserService {
     }
 
     @Transactional
+    public Cart getCart(Long cartNo){
+        return cartRepository.findById(cartNo).get();
+    }
+
+    @Transactional
     public void deleteFromCart(Long cartNo){
         cartRepository.deleteById(cartNo);
     }
@@ -108,12 +110,23 @@ public class UserService {
     }
 
     @Transactional
-    public void writeReview(ReviewDto requestDto, Long cartNo, Long productNo){
+    public Review getReview(Long reviewNo){
+        return reviewRepository.findById(reviewNo).get(); // 예외처리 하기
+    }
 
-        Review review = reviewRepository.findByCartNo(cartNo)
-                .map(entity -> entity.update(requestDto.getRating(), requestDto.getContent()))
+    @Transactional
+    public void writeReview(SatisfactionReviewDto requestDto){
+
+        Review review = reviewRepository.findByCartNo(requestDto.getCartNo())
+                .map(entity -> {
+                    entity.update(requestDto.getRating(), requestDto.getContent());
+                    entity.getSatisfaction().update(requestDto.getWeight(), requestDto.getHeight(), requestDto.getSizeSatisfaction());
+                    return entity;
+                })
                 .orElseGet(()-> {
-                    ReviewDto reviewDto = new ReviewDto(requestDto, cartNo, productNo);
+                    Satisfaction satisfaction = satisfactionRepository.save(requestDto.toSatisfactionDto().toEntity());
+                    ReviewDto reviewDto = requestDto.toReviewDto();
+                    reviewDto.setSatisfaction(satisfaction);
                     return reviewRepository.save(reviewDto.toEntity());
                 });
     }

@@ -43,4 +43,11 @@ public class Satisfaction extends TimeEntity {
         this.sizeSatisfaction = sizeSatisfaction;
         this.size = size;
     }
+
+    public Satisfaction update(int weight, int height, SizeSatisfaction sizeSatisfaction){
+        this.weight = weight;
+        this.height = height;
+        this.sizeSatisfaction = sizeSatisfaction;
+        return this;
+    }
 }

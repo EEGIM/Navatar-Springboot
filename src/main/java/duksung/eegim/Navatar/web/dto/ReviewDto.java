@@ -25,19 +25,15 @@ public class ReviewDto {
     private Long cartNo;
     private SatisfactionRepository satisfactionRepository;
     private Satisfaction satisfaction;
+    private String userName;
 
     @Builder
-    public ReviewDto(String content, int rating){
+    public ReviewDto(Long cartNo, Long productNo, String content, int rating, String userName){
         this.content = content;
         this.rating = rating;
-    }
-
-    @Builder
-    public ReviewDto(ReviewDto reviewDto, Long cartNo, Long productNo){
-        this.content = reviewDto.getContent();
-        this.rating = reviewDto.getRating();
         this.productNo = productNo;
         this.cartNo = cartNo;
+        this.userName = userName;
         //this.satisfaction = satisfactionRepository.getOne(1L); // 임시
     }
 
@@ -49,6 +45,7 @@ public class ReviewDto {
                 .rating(rating)
                 .productNo(productNo)
                 .cartNo(cartNo)
+                .userName(userName)
                 .satisfaction(satisfaction)
                 .build();
     }
