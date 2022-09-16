@@ -1,6 +1,6 @@
 package duksung.eegim.Navatar.domain.Product;
 
-import duksung.eegim.Navatar.domain.id.ProductDetailId;
+import duksung.eegim.Navatar.domain.Product.id.ProductDetailId;
 import lombok.Data;
 
 import javax.persistence.*;

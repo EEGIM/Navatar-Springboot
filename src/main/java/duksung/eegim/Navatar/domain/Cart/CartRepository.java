@@ -1,6 +1,5 @@
-package duksung.eegim.Navatar.domain.repository;
+package duksung.eegim.Navatar.domain.Cart;
 
-import duksung.eegim.Navatar.domain.User.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

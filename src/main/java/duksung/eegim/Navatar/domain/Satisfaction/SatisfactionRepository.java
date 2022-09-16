@@ -1,6 +1,5 @@
-package duksung.eegim.Navatar.domain.repository;
+package duksung.eegim.Navatar.domain.Satisfaction;
 
-import duksung.eegim.Navatar.domain.User.Satisfaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

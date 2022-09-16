@@ -3,13 +3,11 @@ package duksung.eegim.Navatar.config.auth;
 import duksung.eegim.Navatar.config.auth.dto.SessionUser;
 import duksung.eegim.Navatar.domain.User.Role;
 import duksung.eegim.Navatar.domain.User.User;
-import duksung.eegim.Navatar.domain.repository.UserRepository;
-import duksung.eegim.Navatar.web.dto.UserRegisterDto;
+import duksung.eegim.Navatar.domain.User.UserRepository;
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -49,6 +47,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
             else if (role.equals(Role.USER)){
                 redirectStrategy.sendRedirect(request, response, "/users/mypage");
             }
+
         }
 
     }

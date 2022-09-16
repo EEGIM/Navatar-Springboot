@@ -1,7 +1,6 @@
 package duksung.eegim.Navatar.web.dto;
 
-import duksung.eegim.Navatar.domain.User.Cart;
-import duksung.eegim.Navatar.domain.User.SizeSatisfaction;
+import duksung.eegim.Navatar.domain.Satisfaction.SizeSatisfaction;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

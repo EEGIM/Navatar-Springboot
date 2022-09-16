@@ -1,5 +1,6 @@
-package duksung.eegim.Navatar.domain.User;
+package duksung.eegim.Navatar.domain.Review;
 
+import duksung.eegim.Navatar.domain.Satisfaction.Satisfaction;
 import duksung.eegim.Navatar.domain.TimeEntity;
 import lombok.Builder;
 import lombok.Getter;

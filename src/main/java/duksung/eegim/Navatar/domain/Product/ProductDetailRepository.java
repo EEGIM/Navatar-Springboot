@@ -1,8 +1,7 @@
-package duksung.eegim.Navatar.domain.repository;
+package duksung.eegim.Navatar.domain.Product;
 
-import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.Product.ProductDetail;
-import duksung.eegim.Navatar.domain.id.ProductDetailId;
+import duksung.eegim.Navatar.domain.Product.id.ProductDetailId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

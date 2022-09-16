@@ -6,19 +6,19 @@
 
     <div class="contentBx">
         <div class="formBx">
-            {{#userName}}
+            {{#user}}
                 <ul class="scl">
-                    <h2>Hi, {{userName}}</h2>
+                    <h2>Hi, {{name}}</h2>
                     <h3><a href="/logout" role="button">logout</a></h3>
                 </ul>
-            {{/userName}}
-            {{^userName}}
+            {{/user}}
+            {{^user}}
                 <h2>Login</h2>
                 <h4>SNS 계정으로 시작하기</h4>
                 <ul class="scl">
                     <li><a href="/oauth2/authorization/google"><img class="kakao" src="/img/loginbtn_google.png"></a></li>
                 </ul>
-            {{/userName}}
+            {{/user}}
         </div>
     </div>
 </section>

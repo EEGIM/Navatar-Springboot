@@ -1,13 +1,11 @@
 package duksung.eegim.Navatar.web.dto;
 
-import duksung.eegim.Navatar.domain.User.Satisfaction;
-import duksung.eegim.Navatar.domain.User.SizeSatisfaction;
+import duksung.eegim.Navatar.domain.Satisfaction.Satisfaction;
+import duksung.eegim.Navatar.domain.Satisfaction.SizeSatisfaction;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Getter
 @Setter

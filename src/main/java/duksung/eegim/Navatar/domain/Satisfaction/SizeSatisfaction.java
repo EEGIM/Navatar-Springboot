@@ -1,4 +1,4 @@
-package duksung.eegim.Navatar.domain.User;
+package duksung.eegim.Navatar.domain.Satisfaction;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

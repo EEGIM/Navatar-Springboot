@@ -1,4 +1,4 @@
-package duksung.eegim.Navatar.domain.id;
+package duksung.eegim.Navatar.domain.Product.id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

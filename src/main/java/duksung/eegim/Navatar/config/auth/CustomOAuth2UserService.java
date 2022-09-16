@@ -3,7 +3,7 @@ package duksung.eegim.Navatar.config.auth;
 import duksung.eegim.Navatar.config.auth.dto.OAuthAttributes;
 import duksung.eegim.Navatar.config.auth.dto.SessionUser;
 import duksung.eegim.Navatar.domain.User.User;
-import duksung.eegim.Navatar.domain.repository.UserRepository;
+import duksung.eegim.Navatar.domain.User.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

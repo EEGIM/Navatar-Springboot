@@ -1,10 +1,9 @@
-package duksung.eegim.Navatar.domain.User;
+package duksung.eegim.Navatar.domain.Satisfaction;
 
 import duksung.eegim.Navatar.domain.TimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 

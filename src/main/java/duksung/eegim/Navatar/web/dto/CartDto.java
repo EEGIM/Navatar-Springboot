@@ -1,13 +1,12 @@
 package duksung.eegim.Navatar.web.dto;
 
 import duksung.eegim.Navatar.domain.Product.Product;
-import duksung.eegim.Navatar.domain.User.Cart;
+import duksung.eegim.Navatar.domain.Cart.Cart;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
 import java.time.LocalDateTime;
 
 @Getter

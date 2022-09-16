@@ -1,14 +1,12 @@
 package duksung.eegim.Navatar.web.dto;
 
 import duksung.eegim.Navatar.domain.Product.Product;
-import duksung.eegim.Navatar.domain.User.Like;
+import duksung.eegim.Navatar.domain.Like.Like;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.Column;
 import java.time.LocalDateTime;
 
 @Getter

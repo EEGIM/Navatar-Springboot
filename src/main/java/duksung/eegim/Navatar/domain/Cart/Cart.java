@@ -1,4 +1,4 @@
-package duksung.eegim.Navatar.domain.User;
+package duksung.eegim.Navatar.domain.Cart;
 
 import duksung.eegim.Navatar.domain.Product.Product;
 import duksung.eegim.Navatar.domain.TimeEntity;

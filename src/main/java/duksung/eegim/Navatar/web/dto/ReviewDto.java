@@ -1,16 +1,12 @@
 package duksung.eegim.Navatar.web.dto;
 
-import duksung.eegim.Navatar.domain.User.Review;
-import duksung.eegim.Navatar.domain.User.Satisfaction;
-import duksung.eegim.Navatar.domain.repository.SatisfactionRepository;
+import duksung.eegim.Navatar.domain.Review.Review;
+import duksung.eegim.Navatar.domain.Satisfaction.Satisfaction;
+import duksung.eegim.Navatar.domain.Satisfaction.SatisfactionRepository;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Getter
 @Setter

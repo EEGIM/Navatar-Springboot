@@ -1,4 +1,4 @@
-package duksung.eegim.Navatar.domain.repository;
+package duksung.eegim.Navatar.domain.User;
 
 import duksung.eegim.Navatar.domain.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,8 +1,9 @@
 package duksung.eegim.Navatar.web.service;
 
 import duksung.eegim.Navatar.domain.Product.Product;
+import duksung.eegim.Navatar.domain.Product.ProductRepository;
+import duksung.eegim.Navatar.domain.Satisfaction.SatisfactionRepository;
 import duksung.eegim.Navatar.domain.User.*;
-import duksung.eegim.Navatar.domain.repository.*;
 import duksung.eegim.Navatar.web.dto.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,21 +20,14 @@ public class UserService {
     // 서비스도 전체 조회와 유저 개인별 조회 용도 별로 나누기
 
     private UserRepository userRepository;
-    private LikeRepository likeRepository;
     private ProductRepository productRepository;
-    private CartRepository cartRepository;
-    private ReviewRepository reviewRepository;
     private SatisfactionRepository satisfactionRepository;
 
     public List<User> getUsers() {
         return (List<User>) userRepository.findAll();
     }
 
-    public Long userSave(UserRegisterDto requestDto) {
-        return userRepository.save(requestDto.toEntity()).getUserno();
-    }
-
-    @Transactional // 표기 필수! 잊지마,,
+    @Transactional
     public String userUpdate(String email, UserRegisterDto registerDto) {
 
         User user = userRepository.findByEmail(email)
@@ -41,7 +35,6 @@ public class UserService {
                                 .orElseThrow(() -> new IllegalArgumentException("해당 회원이 없습니다." + email));
 
         System.out.println("몸무게:" +registerDto.getWeight()+ " 키:"+ registerDto.getHeight());
-//        user.update(registerDto.getWeight(), registerDto.getHeight());
         return email;
 
     }
@@ -55,83 +48,11 @@ public class UserService {
         return user.get();
     }
 
-    public void deleteUser(long userno){
-        userRepository.deleteById(userno);
+    public Long getUserNo(String email){
+        return userRepository.findByEmail(email).get().getUserno();
     }
 
-    @Transactional
-    public void addLike(Long productNo, String email){
-
-        LikeDto likeDto = LikeDto.builder()
-                .productNo(productRepository.findByProductNo(productNo))
-                .userNo(getUser(email).getUserno())
-                .build();
-        likeRepository.save(likeDto.toEntity());
-    }
-
-    @Transactional
-    public List<Product> getLikeList(String email){ // 코드 예쁘게 수정하기...
-        List<Like> likes = likeRepository.findByUserNo(getUser(email).getUserno());
-        List<Product> products = new ArrayList<Product>();
-        for (Like l : likes){
-            products.add(l.getProductNo());
-        }
-        return products;
-    }
-
-    @Transactional
-    public void addCart(CartDto requestDto, String email, Long productNo){
-        CartDto cartDto = requestDto;
-        cartDto.setUserNo(getUser(email).getUserno());
-        cartDto.setProduct(productRepository.findByProductNo(productNo));
-
-        cartRepository.save(cartDto.toEntity());
-    }
-
-    @Transactional
-    public List<Cart> getCart(String email){
-        List<Cart> cartList = cartRepository.findByUserNo(getUser(email).getUserno());
-        return cartList;
-    }
-
-    @Transactional
-    public Cart getCart(Long cartNo){
-        return cartRepository.findById(cartNo).get();
-    }
-
-    @Transactional
-    public void deleteFromCart(Long cartNo){
-        cartRepository.deleteById(cartNo);
-    }
-
-    @Transactional
-    public Review review(Long cartNo){
-        return reviewRepository.findByCartNo(cartNo).map(entity-> entity).orElse(null);
-    }
-
-    @Transactional
-    public Review getReview(Long reviewNo){
-        return reviewRepository.findById(reviewNo).get(); // 예외처리 하기
-    }
-
-    @Transactional
-    public void writeReview(SatisfactionReviewDto requestDto){
-
-        Review review = reviewRepository.findByCartNo(requestDto.getCartNo())
-                .map(entity -> {
-                    entity.update(requestDto.getRating(), requestDto.getContent());
-                    entity.getSatisfaction().update(requestDto.getWeight(), requestDto.getHeight(), requestDto.getSizeSatisfaction());
-                    return entity;
-                })
-                .orElseGet(()-> {
-                    Satisfaction satisfaction = satisfactionRepository.save(requestDto.toSatisfactionDto().toEntity());
-                    ReviewDto reviewDto = requestDto.toReviewDto();
-                    reviewDto.setSatisfaction(satisfaction);
-                    return reviewRepository.save(reviewDto.toEntity());
-                });
-    }
-
-    @Transactional // 이거는 진짜 바꾸기 (가격 계산 위한 임시 함수)
+    @Transactional // (가격 계산 위한 임시 함수)
     public int getPrice(List<Product> products){
         int price = 0;
         for (Product p : products){

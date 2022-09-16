@@ -1,8 +1,6 @@
-package duksung.eegim.Navatar.domain.User;
+package duksung.eegim.Navatar.domain.Like;
 
 import duksung.eegim.Navatar.domain.Product.Product;
-import duksung.eegim.Navatar.domain.TimeEntity;
-import duksung.eegim.Navatar.domain.id.LikeId;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
