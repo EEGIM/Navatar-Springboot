@@ -1,5 +1,6 @@
 package duksung.eegim.Navatar.config.auth;
 
+import duksung.eegim.Navatar.config.auth.dto.AjaxAuthenticationEntryPoint;
 import duksung.eegim.Navatar.domain.User.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -33,6 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(successHandler())
                 .userInfoEndpoint()
                 .userService(customOAuth2UserService); // 소셜 로그인 성공 후 추가 정보 기입
+        http.exceptionHandling().authenticationEntryPoint(new AjaxAuthenticationEntryPoint("/users/signin"));
+
     }
 
     @Bean

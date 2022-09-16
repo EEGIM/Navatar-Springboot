@@ -8,10 +8,7 @@ import duksung.eegim.Navatar.web.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,7 +31,7 @@ public class CartController {
     }
 
     @PostMapping("/products/{productNo}/cart")
-    public String AddToCart(CartDto requestDto, @PathVariable Long productNo, @SessionAttribute("user") SessionUser user){
+    public String AddToCart(@RequestBody CartDto requestDto, @PathVariable Long productNo, @SessionAttribute("user") SessionUser user){
         cartService.addCart(requestDto, userService.getUserNo(user.getEmail()), productNo);
         return "redirect:/products/{productNo}";
     }

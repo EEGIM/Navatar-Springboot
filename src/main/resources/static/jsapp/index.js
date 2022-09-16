@@ -1,16 +1,68 @@
+var main = {
+    init: function(){
+        var _this = this;
+        $('.wish_Btn').on('click', function(){
+            _this.likes();
+        });
+        $('.cart_Btn').on('click', function(){
+            _this.cart();
+        });
+    },
+    likes : function(){
+        $.ajax({
+        type:'POST',
+        url: window.location.pathname+"/like",
+        async: false,
+        success: function(){
+            alert("찜 목록에 상품을 등록했습니다!");
+        },
+        error: function(jqXHR, error){
+            if (jqXHR.status == '403'){
+                alert("찜 등록을 위해서는, 로그인이 필요합니다!");
+                window.location.href='/users/signin';
+                return invalidSessionModal();
+            }
+            else {
+                return errorModal();
+            }
+        }
+        })
+    },
+    cart : function(){
+        if (sizeCheck() == -1)
+            return;
 
-// product 여기서 실행됨 왜ㅐ지..?
-function addList(url){ // jQuery 방식으로 수정하기..
+        var data = {
+            size: $('#size').val()
+        };
 
-    var form = document.createElement("form");
-    form.action = url;
-    form.method = "post";
-    document.body.appendChild(form);
-    form.submit();
-    alert("찜 목록에 상품을 등록했습니다!"); // --> 이거는 리다이렉션 되고 나서 해야 할 듯..
-
+        $.ajax({
+            type:'POST',
+            url: window.location.pathname+"/cart",
+            dataType:'text',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+            async: false,
+            success: function(){
+                alert("장바구니에 상품을 등록했습니다!");
+            },
+            error: function(jqXHR, error){
+                if (jqXHR.status == '403'){
+                    alert("장바구니 등록을 위해서는, 로그인이 필요합니다!");
+                    window.location.href='/users/signin';
+                    return invalidSessionModal();
+                }
+                else {
+                    alert(error);
+                }
+            }
+        });
+    }
 }
-function addCart(url){
+
+main.init();
+
+function sizeCheck(){
     var form = document.createElement("form");
     var param = new Array();
     var input = new Array();
@@ -20,28 +72,8 @@ function addCart(url){
 
     if (size_value == "notSelected"){
         alert("사이즈를 선택해주세요.");
-        return;
+        return -1;
     }
-
-
-    form.action = url;
-    form.method = "post";
-
-    param.push(['productNo', '{{product.productNo}}']);
-    param.push(['size', size_value]);
-
-    for (var i=0; i<param.length; i++){
-        input[i] = document.createElement("input");
-        input[i].setAttribute("type", "hidden");
-        input[i].setAttribute("name", param[i][0]);
-        input[i].setAttribute("value", param[i][1]);
-        form.appendChild(input[i]);
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-
-    alert("장바구니에 상품을 등록했습니다!");
 }
 
 function deleteBtn(url){

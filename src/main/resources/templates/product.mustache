@@ -62,10 +62,10 @@
             </div>
             <div class="line2">
                 <div class="cart_Btn">
-                    <a href="#" onclick="javascript:addCart('/products/{{product.productNo}}/cart')" class="Btn-a">Cart</a>
+                    <a href="#" class="Btn-a">Cart</a>
                 </div>
                 <div class="wish_Btn">
-                    <a href="#" onclick="javascript:addList('/products/{{product.productNo}}/like')" class="Btn-a"><i class="fa-regular fa-heart"></i></a>
+                    <a id="add_wish_btn" href="#" class="Btn-a"><i class="fa-regular fa-heart"></i></a>
                 </div>
             </div>
 
@@ -208,6 +208,7 @@
     </div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/jsapp/index.js"></script>
 <script>
     const bar = document.getElementById('bar');

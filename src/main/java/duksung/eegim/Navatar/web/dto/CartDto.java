@@ -35,6 +35,11 @@ public class CartDto {
         this.size = size;
     }
 
+    @Builder
+    public CartDto(String size){
+        this.size = size;
+    }
+
     public Cart toEntity(){
         return Cart.builder()
                 .cartNo(cartNo)
