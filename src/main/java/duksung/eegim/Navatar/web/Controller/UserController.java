@@ -1,6 +1,8 @@
 package duksung.eegim.Navatar.web.Controller;
 
 import duksung.eegim.Navatar.config.auth.dto.SessionUser;
+import duksung.eegim.Navatar.domain.User.Role;
+import duksung.eegim.Navatar.domain.User.User;
 import duksung.eegim.Navatar.web.dto.UserRegisterDto;
 import duksung.eegim.Navatar.web.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +34,11 @@ public class UserController {
 
     @GetMapping("/users/modify")
     public String UserInfo(Model model, @SessionAttribute("user") SessionUser user){
-        model.addAttribute("user", userService.getUser(user.getEmail()));
+        // 로그인 제대로 안했을 때, 다시 세션 만료 방법 찾기
+        User u = userService.getUser(user.getEmail());
+        if (u.getRole() == Role.GUEST)
+            httpSession.invalidate();
+        model.addAttribute("user", u);
         return "user-modify";
     }
 

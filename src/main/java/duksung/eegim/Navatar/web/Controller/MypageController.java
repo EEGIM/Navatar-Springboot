@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("user")
 public class MypageController {
 
-    // 로그인, 찜 목록, 장바구니 목록, 리뷰
+    // 삭제!!
 
     private final UserService userService;
 

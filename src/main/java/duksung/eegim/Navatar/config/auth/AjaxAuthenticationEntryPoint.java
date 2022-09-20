@@ -1,4 +1,4 @@
-package duksung.eegim.Navatar.config.auth.dto;
+package duksung.eegim.Navatar.config.auth;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;

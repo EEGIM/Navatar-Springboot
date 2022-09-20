@@ -18,7 +18,7 @@ var main = {
         },
         error: function(jqXHR, error){
             if (jqXHR.status == '403'){
-                alert("찜 등록을 위해서는, 로그인이 필요합니다!");
+                alert("찜 등록을 위해 로그인이 필요합니다!");
                 window.location.href='/users/signin';
                 return invalidSessionModal();
             }
@@ -48,7 +48,7 @@ var main = {
             },
             error: function(jqXHR, error){
                 if (jqXHR.status == '403'){
-                    alert("장바구니 등록을 위해서는, 로그인이 필요합니다!");
+                    alert("장바구니 등록을 위해 로그인이 필요합니다!");
                     window.location.href='/users/signin';
                     return invalidSessionModal();
                 }

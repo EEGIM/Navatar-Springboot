@@ -2,6 +2,7 @@ package duksung.eegim.Navatar.config.auth;
 
 import duksung.eegim.Navatar.config.auth.dto.OAuthAttributes;
 import duksung.eegim.Navatar.config.auth.dto.SessionUser;
+import duksung.eegim.Navatar.domain.User.Role;
 import duksung.eegim.Navatar.domain.User.User;
 import duksung.eegim.Navatar.domain.User.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
         User user = saveOrUpdate(attributes);
+       // if (user.getRole() == Role.USER)
         httpSession.setAttribute("user", new SessionUser(user));
 
         return new DefaultOAuth2User(
