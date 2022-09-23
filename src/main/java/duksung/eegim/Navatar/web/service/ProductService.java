@@ -8,14 +8,15 @@ import duksung.eegim.Navatar.domain.Product.ProductDetailRepository;
 import duksung.eegim.Navatar.domain.Product.ProductRepository;
 import duksung.eegim.Navatar.domain.Product.ProductSizeRepository;
 import duksung.eegim.Navatar.domain.Review.ReviewRepository;
+import duksung.eegim.Navatar.domain.Satisfaction.SatisfactionRepository;
+import duksung.eegim.Navatar.web.dto.ProductSatisfactionDto;
+import duksung.eegim.Navatar.web.dto.SatisfactionByProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @RequiredArgsConstructor
 @Service
@@ -32,6 +33,9 @@ public class ProductService {
 
     @Autowired
     private ReviewRepository reviewRepository;
+
+    @Autowired
+    private SatisfactionRepository satisfactionRepository;
 
     HashMap<String, String> brand_code = new HashMap<String, String>(){{
         put("apoc", "AP");
@@ -90,5 +94,30 @@ public class ProductService {
     @Transactional
     public List<Review> getReviews(Long productNo){
         return reviewRepository.findByProductNo(productNo);
+    }
+
+    @Transactional
+    public List<SatisfactionByProductDto> getProductSatisfaction(Long productNo, int height, int weight){
+        List<ProductSatisfactionDto> satisfactions = satisfactionRepository.getProductSatisfaction(productNo, height, weight);
+        List<SatisfactionByProductDto> satisfactionRates = new ArrayList<>();
+        float satisfactionSum = 0.0f;
+
+        if (satisfactions.isEmpty()){
+            return satisfactionRates;
+        }
+        for (ProductSatisfactionDto satisfaction : satisfactions){
+            System.out.println(satisfaction.getSizeSatisfaction());
+            satisfactionSum += satisfaction.getCount();
+        }
+
+        for (ProductSatisfactionDto satisfaction : satisfactions){
+            Float satisfactionRate = Math.round(((satisfaction.getCount()/satisfactionSum)*100.0f)*100)/100.0f;
+            satisfactionRates.add(SatisfactionByProductDto.builder()
+                    .sizeSatisfaction(satisfaction.getSizeSatisfaction())
+                    .rate(satisfactionRate)
+                    .build());
+        }
+
+        return satisfactionRates;
     }
 }

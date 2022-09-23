@@ -43,8 +43,13 @@ var main = {
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),
             async: false,
-            success: function(){
-                alert("장바구니에 상품을 등록했습니다!");
+            success:function(){
+                $.confirm('장바구니에 상품을 등록했습니다.',
+                {title:'장바구니 등록',
+                callEvent: function(){window.location.href = '/users/cart'},
+                confirmButton: '장바구니로 가기',
+                cancelButton: '계속 쇼핑하기'
+                });
             },
             error: function(jqXHR, error){
                 if (jqXHR.status == '403'){
@@ -69,7 +74,6 @@ function sizeCheck(){
 
     var size_input = document.getElementById("size");
     var size_value = size_input.options[size_input.selectedIndex].value;
-
     if (size_value == "notSelected"){
         alert("사이즈를 선택해주세요.");
         return -1;

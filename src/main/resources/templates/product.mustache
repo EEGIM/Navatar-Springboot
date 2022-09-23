@@ -1,11 +1,26 @@
 {{>layout/head}}
 {{>layout/js/shop-highlights}}
+<link rel="stylesheet" href="/css/jquery.alert.min.css">
+
 {{>layout/header}}
 
 <section id="prodetails" class="section-p1">
     <div class="single-pro-image">
         <img src="{{product.mainImage}}" width="100%" id="MainImg" alt="">
-
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="img/products/n1.jpg" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="img/products/n2.jpg" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="img/products/n3.jpg" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="img/products/n4.jpg" width="100%" class="small-img" alt="">
+            </div>
+        </div>
         {{#product.ARFitting}}
             <a href="/arfitting/{{product.productNo}}"><i class="fa-brands fa-adn" title="AR 피팅으로 이동하기"></i></a>
         {{/product.ARFitting}}
@@ -23,7 +38,7 @@
                 <a href="shop.html" class="location_link">{{product.brand}}</a>
             </li>
             <li class="location_item">
-                <a href="shop_rc.html" class="location_link location_link-active">{{product.categoryCode}}</a>
+                <a href="/brands/romanticcrown.html" class="location_link location_link-active">{{product.categoryCode}}</a>
             </li>
         </ul>
 
@@ -85,6 +100,13 @@
         <img src="{{image}}" width="100%" id="MainImg" alt=""> <!-- 여기가 디테일 이미지 -->
     </div>
     {{/details}}
+</section>
+<section>
+    <hr />
+    <h1>만족도,,,</h1>
+    {{#satisfactions}}
+        <h5>{{sizeSatisfaction}} ----- {{rate}}%</h5>
+    {{/satisfactions}}
 </section>
 
 <section id="review" class="section-p1">
@@ -210,6 +232,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/jsapp/index.js"></script>
+<script src="/jsapp/jquery.alert.min.js"></script>
 <script>
     const bar = document.getElementById('bar');
     const nav = document.getElementById('navbar');

@@ -1,5 +1,20 @@
-{{>layout/head}}
-{{>layout/js/shop-highlights}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVATAR</title>
+
+    <!-- 구글 폰트 적용-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- 아이콘 사용 링크-->
+    <script src="https://kit.fontawesome.com/2a811fae19.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/shop.css">
 </head>
 <body>
 <section id="header">
@@ -16,7 +31,43 @@
             <h3>ROMANTIC CROWN</h3>
         </div>
     </div>
-    {{>layout/nav}}
+
+    <div>
+        <ul id = "navbar">
+            <li><a href="/">Home</a></li>
+
+            <li><a class="active">Shop</a>
+                <div class="sub-bar">
+                    <ul>
+                        <li><a href="/brands/romanticcrown">ROMANTIC CROWN</a></li>
+                        <li><a href="/brands/apoc">A PIECE OF CAKE</a></li>
+                        <li><a href="/brands/mahagrid">mahagrid</a></li>
+                        <li><a href="/brands/luvistrue">LUVISTRUE</a></li>
+                        <li><a href="/brands/lee">LEE</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/html/arfitting.html">AR Fitting</a></li>
+            <li><a href="/foryou">For You</a></li>
+            <li><a href="/html/about.html">About</a></li>
+
+            <li id="loginicon"><a><i class="fa-solid fa-user"></i></a>
+                <div class="sub-bar2">
+                    <ul>
+                        <li><a href="/users/signin">SIGN IN</a></li>
+                        <li><a href="/users/mypage">MY PAGE</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+    </div>
+    <div id="tab">
+        <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+
+</section>
 
     <section id="product1" class="section-p1">
     <div class="sidebar">
@@ -25,35 +76,11 @@
             <li><a href="/brands/romanticcrown">전체</a></li>
             <li>
                 <a href="/brands/romanticcrown/001">상의</a>
-                <ul>
-                    <li><a href="/brands/romanticcrown/001001">반소매티셔츠</a></li>
-                    <li><a href="/brands/romanticcrown/001010">긴소매티셔츠</a></li>
-                    <li><a href="/brands/romanticcrown/001011">민소매티셔츠</a></li>
-                    <li><a href="/brands/romanticcrown/001002">셔츠/블라우스</a></li>
-                    <li><a href="/brands/romanticcrown/001003">피케/카라티셔츠</a></li>
-                    <li><a href="/brands/romanticcrown/001005">맨투맨, 스웨트셔츠</a></li>
-                    <li><a href="/brands/romanticcrown/001004">후드</a></li>
-                    <li><a href="/brands/romanticcrown/001006">니트/스웨터</a></li>
-                    <li><a href="/brands/romanticcrown/001008">기타 상의</a></li>
-                </ul>
             </li>
             <li>
                 <a href="/brands/romanticcrown/003">바지</a>
-                <ul>
-                    <li><a href="/brands/romanticcrown/003002">데님팬츠</a></li>
-                    <li><a href="/brands/romanticcrown/003007">코튼팬츠</a></li>
-                    <li><a href="/brands/romanticcrown/003008">슈트 팬츠/슬랙스</a></li>
-                    <li><a href="/brands/romanticcrown/003004">트레이닝/조거팬츠</a></li>
-                    <li><a href="/brands/romanticcrown/003009">숏 팬츠</a></li>
-                    <li><a href="/brands/romanticcrown/003006">기타 바지</a></li>
-                </ul>
             </li>
             <li><a href="/brands/romanticcrown/022">스커트</a>
-                <ul>
-                    <li><a href="/brands/romanticcrown/022001">미니스커트</a></li>
-                    <li><a href="/brands/romanticcrown/022002">미디스커트</a></li>
-                    <li><a href="/brands/romanticcrown/022003">롱스커트</a></li>
-                </ul>
             </li>
         </ul>
     </div>
@@ -83,6 +110,9 @@
                         <a href="/arfitting/{{productNo}}"><i class="fa-brands fa-adn"></i></a>
                     {{/ARFitting}}
                 </div>
+            {{/product}}
+            {{^product}}
+                <h1>해당 카테고리에 해당하는 상품이 없습니다.</h1>
             {{/product}}
             <div id="page" class="section-p1">
                 <a href="#"><i class="fa-solid fa-circle-arrow-left"></i></a>

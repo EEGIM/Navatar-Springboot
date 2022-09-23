@@ -18,6 +18,7 @@ public class MypageController {
 
     private final UserService userService;
 
+
     @GetMapping("/html/dddd")
     public void mmm(@SessionAttribute("user") SessionUser user){
         System.out.println("세션확인: "+user.getName());
@@ -27,6 +28,5 @@ public class MypageController {
     public void mmmm(@ModelAttribute("user") SessionUser user){
         System.out.println(user.getEmail());
     }
-
 
 }

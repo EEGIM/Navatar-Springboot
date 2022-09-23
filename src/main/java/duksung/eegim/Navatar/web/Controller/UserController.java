@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 
 @RequiredArgsConstructor
 @Controller
@@ -66,7 +67,9 @@ public class UserController {
 
     @GetMapping("/foryou")
     public String recommandProduct(Model model, @SessionAttribute("user") SessionUser user){
-        model.addAttribute("products", userService.getSizeRecommand(user.getEmail()));
+        HashMap<String, Long> info = userService.getSizeInfo(user.getEmail());
+        model.addAttribute("products", userService.getSizeRecommand(info));
+        model.addAttribute("userSize", info);
         model.addAttribute("userName", user.getName());
         return "foryou";
     }

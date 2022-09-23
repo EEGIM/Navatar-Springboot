@@ -71,8 +71,7 @@ public class UserService {
     }
 
     @Transactional
-    public List<Product> getSizeRecommand(String email) {
-        HashMap<String, Long> info = getSizeInfo(email);
+    public List<Product> getSizeRecommand(HashMap<String, Long> info) {
         List<Long> products = satisfactionRepository.getProductNoList(info.get("height"), info.get("weight"));
         List<Product> productList = new ArrayList<Product>();
         for (Long p : products){ // 이부분 다시 해보기 + 느림..
@@ -80,6 +79,5 @@ public class UserService {
         }
         return productList;
     }
-
 
 }
