@@ -45,6 +45,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
   // customoauth2userservice, oauthattributes 확인해서 지금 로그인 한 사용자의 정보를 얻어올 수 잇ㄸ로ㅗㄱ 하기.
         if (user.isPresent() && user.get().getRole().equals(Role.GUEST)){
             redirectStrategy.sendRedirect(request, response, "/users/signup");
+            return;
         }
 
 
