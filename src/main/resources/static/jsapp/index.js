@@ -42,6 +42,9 @@ var main = {
             dataType:'text',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),
+            beforeSend : function(xhr){
+                xhr.setRequestHeader("Referer", window.location.pathname);
+            },
             async: false,
             success:function(){
                 $.confirm('장바구니에 상품을 등록했습니다.',

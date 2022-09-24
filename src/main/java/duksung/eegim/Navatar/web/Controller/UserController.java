@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
@@ -50,7 +52,13 @@ public class UserController {
     }
 
     @GetMapping("/users/signin")
-    public String signin(Model model){
+    public String signin(Model model, HttpServletRequest request){
+        String prevUrl = request.getHeader("Referer");
+        System.out.println("이전 페이지: "+prevUrl);
+        if (prevUrl != null && !prevUrl.contains("/users/signin")){
+            request.getSession().setAttribute("prevPage", prevUrl);
+        }
+
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("user", user);
