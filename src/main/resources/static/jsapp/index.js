@@ -79,7 +79,7 @@ function sizeCheck(){
     var size_input = document.getElementById("size");
     var size_value = size_input.options[size_input.selectedIndex].value;
     if (size_value == "notSelected"){
-        alert("사이즈를 선택해주세요.");
+        $.alert("사이즈를 선택해주세요.");
         return -1;
     }
 }
