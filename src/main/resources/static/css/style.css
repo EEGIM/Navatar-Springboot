@@ -2028,8 +2028,8 @@ padding: 0;
 
 
 
- /* Responsive Wed Settings (1060x1920) */
- @media (max-width: 1060px) {
+ /* Responsive Wed Settings (1080x1920) */
+ @media (max-width: 1080px) {
 
     #header {
         padding: 60px 80px;
