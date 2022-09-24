@@ -12,14 +12,16 @@ var main = {
         $.ajax({
         type:'POST',
         url: window.location.pathname+"/like",
+        beforeSend : function(xhr){
+            xhr.setRequestHeader("Referer", window.location.pathname);
+        },
         async: false,
         success: function(){
-            alert("찜 목록에 상품을 등록했습니다!");
+           $.alert("찜 목록에 상품을 등록했습니다!");
         },
         error: function(jqXHR, error){
             if (jqXHR.status == '403'){
-                alert("찜 등록을 위해 로그인이 필요합니다!");
-                window.location.href='/users/signin';
+                $.alert("찜 등록을 위해 로그인이 필요합니다!", {callEvent: function(){window.location.href='/users/signin'}});
                 return invalidSessionModal();
             }
             else {
@@ -56,12 +58,11 @@ var main = {
             },
             error: function(jqXHR, error){
                 if (jqXHR.status == '403'){
-                    alert("장바구니 등록을 위해 로그인이 필요합니다!");
-                    window.location.href='/users/signin';
+                    $.alert("장바구니 등록을 위해 로그인이 필요합니다!", {callEvent: function(){window.location.href='/users/signin'}});
                     return invalidSessionModal();
                 }
                 else {
-                    alert(error);
+                    //alert(error);
                 }
             }
         });
