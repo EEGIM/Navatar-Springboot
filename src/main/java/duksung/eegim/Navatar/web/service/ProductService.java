@@ -98,7 +98,8 @@ public class ProductService {
 
     @Transactional
     public List<SatisfactionByProductDto> getProductSatisfaction(Long productNo, int height, int weight){
-        List<ProductSatisfactionDto> satisfactions = satisfactionRepository.getProductSatisfaction(productNo, height, weight);
+        List<ProductSatisfactionDto> satisfactions = satisfactionRepository.getProductSatisfaction(productNo);
+       // List<ProductSatisfactionDto> satisfactions = satisfactionRepository.getProductSatisfaction(productNo, height, weight);
         List<SatisfactionByProductDto> satisfactionRates = new ArrayList<>();
         float satisfactionSum = 0.0f;
 
@@ -115,6 +116,8 @@ public class ProductService {
             satisfactionRates.add(SatisfactionByProductDto.builder()
                     .sizeSatisfaction(satisfaction.getSizeSatisfaction())
                     .rate(satisfactionRate)
+                    .size(satisfaction.getSize())
+                    .count(satisfaction.getCount())
                     .build());
         }
 

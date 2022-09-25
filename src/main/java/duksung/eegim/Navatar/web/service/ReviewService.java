@@ -29,7 +29,9 @@ public class ReviewService {
 
     @Transactional
     public Review getReviewByReviewNo(Long reviewNo){
-        return reviewRepository.findById(reviewNo).get(); // 예외처리 하기
+        return reviewRepository.findById(reviewNo)
+                .map(entity -> { entity.countUpdate(); return entity;})
+                .orElseThrow(() -> new IllegalArgumentException()); // 예외처리 하기
     }
 
     @Transactional
