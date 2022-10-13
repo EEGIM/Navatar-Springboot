@@ -17,9 +17,14 @@
                 <a href="/foryou" class="location_link location_link-active">FOR YOU</a>
             </li>
         </ul>
-        <h2>{{userName}} 회원님을 위한 나바타의 추천</h2>
-        <h5>foryou 추천 시스템은 회원님의 체형정보({{userSize.height}}cm, {{userSize.weight}}kg)를 기반으로 이루어집니다.</h5>
-
+        {{#userSize}}
+            <h2>{{userName}} 회원님을 위한 나바타의 추천</h2>
+            <h5>foryou 추천 시스템은 회원님의 체형정보({{userSize.height}}cm, {{userSize.weight}}kg)를 기반으로 이루어집니다.</h5>
+        {{/userSize}}
+        {{^userSize}}
+            <h2> 체형정보를 입력하시면, 회원님의 체형정보에 따른 상품 추천을 받아 보실 수 있습니다.</h2>
+            <a href="/users/modify" class="Btn-a buy_Btn">체형 정보 입력하러 가기</a>
+        {{/userSize}}
         <div class="pro-container">
             {{#products}}
                 <div class="pro" onclick="window.location.href='/products/{{productNo}}';">
@@ -33,6 +38,9 @@
                         <a href="/arfitting/{{productNo}}"><i class="fa-brands fa-adn"></i></a>
                     {{/ARFitting}}
                 </div>
+            {{/products}}
+            {{^products}}
+                <h3>해당 체형에 맞는 상품 결과가 없습니다..</h3>
             {{/products}}
             <div id="page" class="section-p1">
                 <a href="#"><i class="fa-solid fa-circle-arrow-left"></i></a>

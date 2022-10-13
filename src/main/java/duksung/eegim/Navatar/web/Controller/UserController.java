@@ -76,6 +76,9 @@ public class UserController {
     @GetMapping("/foryou")
     public String recommandProduct(Model model, @SessionAttribute("user") SessionUser user){
         HashMap<String, Long> info = userService.getSizeInfo(user.getEmail());
+        if (info.get("height").equals(0L) || info.get("weight").equals(0L)){
+            return "foryou";
+        }
         model.addAttribute("products", userService.getSizeRecommand(info));
         model.addAttribute("userSize", info);
         model.addAttribute("userName", user.getName());
