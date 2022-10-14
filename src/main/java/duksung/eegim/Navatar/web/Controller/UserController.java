@@ -38,10 +38,10 @@ public class UserController {
     @GetMapping("/users/modify")
     public String UserInfo(Model model, @SessionAttribute("user") SessionUser user){
         // 로그인 제대로 안했을 때, 다시 세션 만료 방법 찾기
-        User u = userService.getUser(user.getEmail());
-        if (u.getRole() == Role.GUEST)
-            httpSession.invalidate();
-        model.addAttribute("user", u);
+//        User u = userService.getUser(user.getEmail());
+//        if (u.getRole() == Role.GUEST)
+//            httpSession.invalidate();
+//        model.addAttribute("user", u);
         return "user-modify";
     }
 
