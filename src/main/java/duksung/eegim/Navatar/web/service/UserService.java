@@ -34,8 +34,7 @@ public class UserService {
                         .map(entity -> entity.update(registerDto.getWeight(), registerDto.getHeight()))
                                 .orElseThrow(() -> new IllegalArgumentException("해당 회원이 없습니다." + email));
 
-        System.out.println("몸무게:" +registerDto.getWeight()+ " 키:"+ registerDto.getHeight());
-        return email;
+       return email;
 
     }
 

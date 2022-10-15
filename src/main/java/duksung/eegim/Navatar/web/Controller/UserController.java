@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
@@ -37,11 +38,10 @@ public class UserController {
 
     @GetMapping("/users/modify")
     public String UserInfo(Model model, @SessionAttribute("user") SessionUser user){
-        // 로그인 제대로 안했을 때, 다시 세션 만료 방법 찾기
-//        User u = userService.getUser(user.getEmail());
+        User u = userService.getUser(user.getEmail());
 //        if (u.getRole() == Role.GUEST)
 //            httpSession.invalidate();
-//        model.addAttribute("user", u);
+        model.addAttribute("user", u);
         return "user-modify";
     }
 
@@ -54,7 +54,6 @@ public class UserController {
     @GetMapping("/users/signin")
     public String signin(Model model, HttpServletRequest request){
         String prevUrl = request.getHeader("Referer");
-        System.out.println("이전 페이지: "+prevUrl);
         if (prevUrl != null && !prevUrl.contains("/users/signin")){
             request.getSession().setAttribute("prevPage", prevUrl);
         }

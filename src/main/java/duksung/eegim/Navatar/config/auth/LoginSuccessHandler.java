@@ -42,7 +42,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         SavedRequest savedRequest = requestCache.getRequest(request, response);
 
         Optional<User> user = userRepository.findByEmail(sessionUser.getEmail());
-  // customoauth2userservice, oauthattributes 확인해서 지금 로그인 한 사용자의 정보를 얻어올 수 잇ㄸ로ㅗㄱ 하기.
+
         if (user.isPresent() && user.get().getRole().equals(Role.GUEST)){
             redirectStrategy.sendRedirect(request, response, "/users/signup");
             return;
@@ -51,7 +51,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
         String prevPage = (String) request.getSession().getAttribute("prevPage");
 
-        System.out.println("prevPage: " +prevPage);
         if (prevPage != null){
             request.getSession().removeAttribute("prevPage"); // 기존의 이전 페이지 제거
         }

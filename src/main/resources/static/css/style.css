@@ -1197,7 +1197,7 @@ padding: 0;
     align-items: center;
 }
 
-#signup-area .contentBx .formBx .signupinputBx input[type="button"] {
+#signup-area .contentBx .formBx .signupinputBx input[type="submit"] {
 
     background: #083c81;
     color: #fff;
@@ -1551,7 +1551,7 @@ padding: 0;
     align-items: center;
 }
 
-#mypageinfo-area .contentBx .formBx .signupinputBx input[type="button"] {
+#mypageinfo-area .contentBx .formBx .signupinputBx input[type="submit"] {
 
     background: #083c81;
     color: #fff;
@@ -2362,7 +2362,7 @@ padding: 0;
         align-items: center;
     }
 
-    #signup-area .contentBx .formBx .signupinputBx input[type="button"] {
+    #signup-area .contentBx .formBx .signupinputBx input[type="submit"] {
         background: #083c81;
         color: #fff;
         outline: none;
@@ -2554,7 +2554,7 @@ padding: 0;
         background: transparent;
     }
 
-    #mypageinfo-area .contentBx .formBx .signupinputBx input[type="button"] {
+    #mypageinfo-area .contentBx .formBx .signupinputBx input[type="submit"] {
         background: #083c81;
         color: #fff;
         outline: none;

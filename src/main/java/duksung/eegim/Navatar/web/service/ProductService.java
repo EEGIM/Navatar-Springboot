@@ -72,9 +72,7 @@ public class ProductService {
 
     @Transactional
     public List<Product> getListByBrandNCate(String brand, String cate){
-        System.out.println(brand);
         String code = brand_code.get(brand);
-        System.out.println(code);
         return (List<Product>) productRepository.findByCategoryCodeLike(code+cate+"%");
     }
 
@@ -85,9 +83,7 @@ public class ProductService {
 
     @Transactional
     public List<Product> getListByBrand(String brand){
-        System.out.println(brand);
         String code = brand_code.get(brand);
-        System.out.println(code);
         return (List<Product>) productRepository.findByCategoryCodeLike("%"+code+"%");
     }
 
@@ -107,7 +103,6 @@ public class ProductService {
             return satisfactionRates;
         }
         for (ProductSatisfactionDto satisfaction : satisfactions){
-            System.out.println(satisfaction.getSizeSatisfaction());
             satisfactionSum += satisfaction.getCount();
         }
 

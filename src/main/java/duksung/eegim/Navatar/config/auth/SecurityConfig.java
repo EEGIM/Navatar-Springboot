@@ -34,8 +34,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userInfoEndpoint()
                 .userService(customOAuth2UserService); // 소셜 로그인 성공 후 추가 정보 기입
         http.exceptionHandling().authenticationEntryPoint(new AjaxAuthenticationEntryPoint("/users/signin"));
-        http.cors().and();
-        http.csrf().disable();
 
     }
 
