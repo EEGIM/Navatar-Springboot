@@ -19,10 +19,4 @@ public class IndexController {
         model.addAttribute("product", productService.getList());
         return "index";
     }
-
-    @GetMapping("/example")
-    public String example(){
-        return "form";
-    }
-
 }

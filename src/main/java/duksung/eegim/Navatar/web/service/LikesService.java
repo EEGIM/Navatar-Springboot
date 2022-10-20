@@ -24,8 +24,8 @@ public class LikesService {
     public List<Product> getLikeList(Long userNo){
         List<Like> likes = likeRepository.findByUserNo(userNo);
         List<Product> products = new ArrayList<Product>();
-        for (Like l : likes){
-            products.add(l.getProductNo());
+        for (Like like : likes){
+            products.add(like.getProductNo());
         }
         return products;
     }

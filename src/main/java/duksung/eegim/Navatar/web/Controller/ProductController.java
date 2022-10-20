@@ -30,13 +30,13 @@ public class ProductController {
     @GetMapping("/brands/{brand}")
     public String getProductByBrand(Model model, @PathVariable String brand){
         model.addAttribute("product", productService.getListByBrand(brand));
-        return "/shop/"+brand;
+        return brand;
     }
 
     @GetMapping("/brands/{brand}/{cate}")
     public String getProductByBrandNCate(Model model, @PathVariable String brand, @PathVariable String cate){
         model.addAttribute("product", productService.getListByBrandNCate(brand, cate));
-        return "/shop/"+brand;
+        return brand;
     }
 
     // arfitting

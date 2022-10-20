@@ -30,8 +30,11 @@ public class UserService {
     @Transactional
     public String userUpdate(String email, UserRegisterDto registerDto) {
 
+        Long weight = registerDto.getWeight() == null ? 0L : registerDto.getWeight();
+        Long height = registerDto.getWeight() == null ? 0L : registerDto.getHeight();
+
         User user = userRepository.findByEmail(email)
-                        .map(entity -> entity.update(registerDto.getWeight(), registerDto.getHeight()))
+                        .map(entity -> entity.update(weight, height))
                                 .orElseThrow(() -> new IllegalArgumentException("해당 회원이 없습니다." + email));
 
        return email;
@@ -54,8 +57,8 @@ public class UserService {
     @Transactional // (가격 계산 위한 임시 함수)
     public int getPrice(List<Product> products){
         int price = 0;
-        for (Product p : products){
-            price += p.getNormalPrice();
+        for (Product product : products){
+            price += product.getNormalPrice();
         }
         return price;
     }
@@ -73,8 +76,8 @@ public class UserService {
     public List<Product> getSizeRecommand(HashMap<String, Long> info) {
         List<Long> products = satisfactionRepository.getProductNoList(info.get("height"), info.get("weight"));
         List<Product> productList = new ArrayList<Product>();
-        for (Long p : products){ // 이부분 다시 해보기 + 느림..
-            productList.add(productRepository.findByProductNo(p));
+        for (Long product : products){ // 이부분 다시 해보기 + 느림..
+            productList.add(productRepository.findByProductNo(product));
         }
         return productList;
     }

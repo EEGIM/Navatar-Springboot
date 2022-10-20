@@ -20,7 +20,6 @@ public interface SatisfactionRepository extends JpaRepository<Satisfaction, Long
     @Query(value = "select Product_productNo from (select * from Satisfaction where height between :height-3 and :height+3 AND weight between :weight-3 and :weight + 3) s Group by s.Product_productNo having count(*) > 1 ORDER BY (select COUNT(*) from (select * from Satisfaction where height between :height-3 and :height+3 AND weight between :weight-3 and :weight+3) v where v.satisfaction=3 and v.Product_productNo=s.Product_productNo)/COUNT(s.Product_productNo) desc, s.Product_productNo desc;", nativeQuery = true)
     List<Long> getProductNoList(@Param("height") Long height, @Param("weight") Long weight);
 
-    // 아래 쿼리용 dto 만들기
     @Query(value = "select satisfaction sizeSatisfaction, count(s.satisfaction) count, size from Satisfaction s where s.Product_productNo=:productNo group by s.satisfaction, size order by s.satisfaction desc;", nativeQuery = true)
     List<ProductSatisfactionDto> getProductSatisfaction(@Param("productNo") Long productNo);
 //

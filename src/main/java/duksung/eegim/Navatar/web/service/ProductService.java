@@ -54,8 +54,8 @@ public class ProductService {
     @Transactional
     public List<Product> getList(List<Long> products){
         List<Product> productList = new ArrayList<Product>();
-        for (Long p : products){ // 이부분 다시 해보기
-            productList.add(productRepository.findByProductNo(p));
+        for (Long product : products){ // 이부분 다시 해보기
+            productList.add(productRepository.findByProductNo(product));
         }
         return productList;
     }
