@@ -182,7 +182,7 @@ a#indexhome {
 }
 /* 서브 카테고리 */
 #navbar .sub-bar{
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -235,7 +235,7 @@ a#indexhome {
 
 
 #navbar .sub-bar2{
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
