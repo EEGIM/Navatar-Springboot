@@ -455,7 +455,7 @@ footer .copyright{
 
 #prodetails .single-pro-details{
     width: 50%;
-    padding-top: 10px;
+    
     padding-left: 30px;
 
 }
@@ -503,7 +503,7 @@ footer .copyright{
 
 #prodetails .single-pro-details table {
     margin-top: 20px;
-    max-width: 325px;
+    /* max-width: 325px; */
     border-collapse: separate;
     border-spacing: 0 29px;
 }

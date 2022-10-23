@@ -300,7 +300,7 @@ body {
 }
 
 #close {
-    display: none;
+    display: flex;
 }
 
 
