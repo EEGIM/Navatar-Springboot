@@ -353,15 +353,18 @@ body {
     display:inline-flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 50px;
 }
 
 .sidebar ul li{
     line-height: 40px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    list-style: none;
 }
 
 .sidebar ul li a {
     font-size: 32px;
+    text-decoration: none;
 }
 
 .sidebar ul li a:hover{
