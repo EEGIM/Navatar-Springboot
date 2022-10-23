@@ -99,17 +99,59 @@ a#indexhome {
 
 }
 
-#navbar{
+
+#navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #dcc7b0;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 80px 0 0 10px;
+    transition: 0.3s;
 }
 
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
+#navbar.active{
+    right: 0px;
+}
 
-    position: relative;
+#navbar li {
+    margin-bottom: 25px;
+}
+
+#tab{
+    display: flex;
+    align-items: center;
+}
+
+#tab i{
+    font-size: 40px;
+    color: #575757;
+
+}
+
+#indextab{
+    display: flex;
+    align-items: center;
+}
+
+#indextab i{
+    font-size: 40px;
+    color: #575757;
+}
+
+#close {
+    display: initial;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 24px;
+    color: #575757;
 }
 
 #navbar li a {
@@ -143,12 +185,20 @@ a#indexhome {
     justify-content: center;
 }
 
-#navbar li:hover .sub-bar{
-    display: block;
-    position: absolute;
-    background-color: #eae4d3;
-    margin-left: -50px;
+#navbar .sub-bar ul{
     margin-top: 15px;
+    margin-left: -5px;
+
+}
+
+#navbar li:hover .sub-bar {
+    position:fixed;
+    background-color: #dcc7b0;
+    margin-left: -155px;
+    top: 100px;
+    /* z-index: 1; 맨앞으로 나오게 */
+    align-items: center;
+    justify-content: center;
 }
 
 #navbar li:hover .sub-bar ul{
@@ -156,7 +206,7 @@ a#indexhome {
 
 }
 
-#navbar li:hover .sub-bar ul li{
+#navbar li:hover .sub-bar ul li {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: -10px;
@@ -164,13 +214,13 @@ a#indexhome {
     border-radius: 0;
     text-align: center;
     width: 160px;
-
 }
 
 #navbar .sub-bar ul li a {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    text-align: center;
 }
 
 #navbar li .sub-bar a.active::after,
@@ -188,12 +238,20 @@ a#indexhome {
     justify-content: center;
 }
 
-#navbar li:hover .sub-bar2{
-    display: block;
-    position: absolute;
-    background-color: #eae4d3;
-    margin-left: -30px;
+#navbar .sub-bar2 ul{
     margin-top: 15px;
+    margin-left: -5px;
+}
+
+#navbar li:hover .sub-bar2 {
+    position:fixed;
+    background-color: #dcc7b0;
+    margin-left: -155px;
+    margin-top: -40px;
+    /* z-index: 1; 맨앞으로 나오게 */
+    align-items: center;
+    justify-content: center;
+
 }
 
 #navbar li:hover .sub-bar2 ul{
@@ -201,21 +259,22 @@ a#indexhome {
 
 }
 
-#navbar li:hover .sub-bar2 ul li{
+#navbar li:hover .sub-bar2 ul li {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: -10px;
     margin-right: -10px;
     border-radius: 0;
     text-align: center;
-    width: 100px;
-
+    width: 160px;
 }
+
 
 #navbar .sub-bar2 ul li a {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    text-align: center;
 }
 
 #navbar li .sub-bar2 a.active::after,
