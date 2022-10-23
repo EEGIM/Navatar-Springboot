@@ -103,7 +103,7 @@ body {
 
 #navbar li a:hover, /* hover: 네비탭 마우스 가져가면 색 변하는 거*/
 #navbar li a.active {  /*active: 네비탭 현재 선택된 페이지에서 상태 변화 */
-    color: #083c81;
+    color: #810808;
 }
 
 #navbar li a.active::after,
