@@ -193,6 +193,16 @@ body {
 
 }
 
+#indextab{
+    display: flex;
+    align-items: center;
+}
+
+#indextab i{
+    font-size: 40px;
+    color: #575757;
+}
+
 #close {
     display: initial;
     position: absolute;
