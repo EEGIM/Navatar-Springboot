@@ -515,14 +515,14 @@ footer .copyright{
     display: table-cell;
     width: 100px;
     text-align: left;
-    font-size: 32px;
+    font-size: 28px;
 }
 
 #prodetails .single-pro-details table td {
     height: 21px;
     vertical-align: middle;
     width: auto;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 
@@ -602,6 +602,9 @@ footer .copyright{
 
 #prodetails2 h2{
     text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #575757;
 }
 
 /* product 상세 페이지 location area */
