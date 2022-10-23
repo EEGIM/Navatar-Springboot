@@ -123,6 +123,7 @@ a#indexhome {
 
 #navbar li {
     margin-bottom: 25px;
+    list-style: none;
 }
 
 #tab{
@@ -181,7 +182,7 @@ a#indexhome {
 }
 /* 서브 카테고리 */
 #navbar .sub-bar{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
