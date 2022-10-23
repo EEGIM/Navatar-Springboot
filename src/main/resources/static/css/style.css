@@ -62,7 +62,8 @@ body {
 }
 
 #header img{
-    display: none;
+    display: flex;
+    opacity: 90%;
 
 }
 
@@ -95,7 +96,7 @@ body {
 }
 
 a#indexhome {
-    margin-right: 784px;
+    margin-right: 750px;
 
 }
 
@@ -433,7 +434,7 @@ footer .copyright{
     color: #083c81;
     border: 1px solid #eae4d3;
     position: absolute;
-    top: 210px;
+    top: 220px;
     margin: 22px 22px;
     font-size: 32px;
 
