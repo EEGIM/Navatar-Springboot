@@ -62,8 +62,7 @@ body {
 }
 
 #header img{
-    display: flex;
-    opacity: 90%;
+    display: none;
 
 }
 
@@ -96,7 +95,7 @@ body {
 }
 
 a#indexhome {
-    margin-right: 750px;
+    margin-right: 784px;
 
 }
 
