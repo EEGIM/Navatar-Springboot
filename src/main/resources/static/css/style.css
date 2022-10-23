@@ -193,30 +193,7 @@ a#indexhome {
 
 }
 
-#navbar li:hover .sub-bar {
-    position:fixed;
-    background-color: #dcc7b0;
-    margin-left: -155px;
-    top: 100px;
-    /* z-index: 1; 맨앞으로 나오게 */
-    align-items: center;
-    justify-content: center;
-}
 
-#navbar li:hover .sub-bar ul{
-    display: block;
-
-}
-
-#navbar li:hover .sub-bar ul li {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: -10px;
-    margin-right: -10px;
-    border-radius: 0;
-    text-align: center;
-    width: 160px;
-}
 
 #navbar .sub-bar ul li a {
     text-decoration: none;
