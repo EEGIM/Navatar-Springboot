@@ -337,12 +337,13 @@ body {
     line-height: 40px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     list-style: none;
+    padding-right: 20px;
 }
 
 .sidebar ul li a {
-    font-size: 32px;
+    font-size: 28px;
     text-decoration: none;
-    color: black;  
+    color: #575757;  
 }
 
 .sidebar ul li a:visited { text-decoration: none; 
