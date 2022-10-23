@@ -319,7 +319,7 @@ body {
     height: 100px;
     left: 0;
     padding-top: 0;
-
+    background-color: #dcc7b0;
 }
 
 #product1 .sidebar .text {
@@ -330,14 +330,15 @@ body {
     display:inline-flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 32px;
 }
 
 .sidebar ul li{
     line-height: 40px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     list-style: none;
-    padding-right: 20px;
+    padding-right: 70px;
+    padding-left: 70px;
 }
 
 .sidebar ul li a {
