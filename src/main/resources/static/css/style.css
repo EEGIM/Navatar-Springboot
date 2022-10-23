@@ -523,14 +523,14 @@ footer .copyright{
     display: table-cell;
     width: 230px;
     text-align: left;
-    font-size: 32px;
+    font-size: 38px;
 }
 
 #prodetails .single-pro-details table td {
     height: 21px;
     vertical-align: middle;
     width: auto;
-    font-size: 22px;
+    font-size: 32px;
 }
 
 
@@ -616,6 +616,7 @@ footer .copyright{
     font-size: 36px;
     font-weight: 700;
     color: #575757;
+    margin-bottom: 40px;
 }
 
 /* product 상세 페이지 location area */
@@ -693,7 +694,7 @@ margin-bottom: 70px;
 }
 
 #review h2 {
-
+    font-size: 48px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -708,7 +709,15 @@ margin-bottom: 70px;
 
 #review .ReviewList table {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 30px;
 }
+
+#review .ReviewList table thead th {
+    font-size: 26px;
+    color: #575757;
+}
+
 #review .ReviewList table tbody {
     vertical-align: middle;
 }
@@ -720,6 +729,7 @@ margin-bottom: 70px;
     text-align: center;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
 }
 
 #review .wrap {
@@ -733,7 +743,7 @@ margin-bottom: 70px;
     float: right;
     text-align: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 32px;
 
 }
 
@@ -743,21 +753,20 @@ margin-bottom: 70px;
     outline: none;
     border: none;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
     text-align: center;
-    width: 90px;
-    height: 30px;
+    width: 180px;
+    height: 50px;
     margin-right: 8px;
 
 }
 
-
-
 #review .page {
     display: block;
-    margin-top: 70px;
+    margin-top: 120px;
     align-items: center;
+    font-size: 18px;
 }
 
 #review .page .left {
@@ -790,7 +799,7 @@ padding: 0;
 }
 
 #review .page .center li {
-
+    font-size: 24px;
     display: inline-block;
     font-size: 12px;
     line-height: 20px;
@@ -986,17 +995,15 @@ padding: 0;
 #login-area{
     position: relative;
     width: 100%;
-    height: 70vh;
     display: flex;
-    max-width: 600px;
-    height: 650px;
-    width: 100%;
+    max-width: 800px;
+    height: 1500px;
     background: #fff;
     margin: 20px auto;
     padding: 10px 12px;
-    border: 1px solid #dcc7b0;
+    border: 0px solid #dcc7b0;
     border-radius: 25px;
-    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+    box-shadow: none;
     margin-top: 50px;
 
 }
@@ -1007,12 +1014,8 @@ padding: 0;
     align-items: center;
     width: 100%;
     height: 100%;
+    margin-bottom: 50px;
 }
-
-/*
-#login-area .contentBx .formBx{
-
-}*/
 
 #login-area .contentBx .formBx h2{
     color: #000000;
