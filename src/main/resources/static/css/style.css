@@ -189,7 +189,7 @@ a#indexhome {
 
 #navbar .sub-bar ul{
     margin-top: 15px;
-    margin-left: -5px;
+    margin-left: 15px;
 
 }
 
@@ -219,33 +219,7 @@ a#indexhome {
 
 #navbar .sub-bar2 ul{
     margin-top: 15px;
-    margin-left: -5px;
-}
-
-#navbar li:hover .sub-bar2 {
-    position:fixed;
-    background-color: #dcc7b0;
-    margin-left: -155px;
-    margin-top: -40px;
-    /* z-index: 1; 맨앞으로 나오게 */
-    align-items: center;
-    justify-content: center;
-
-}
-
-#navbar li:hover .sub-bar2 ul{
-    display: block;
-
-}
-
-#navbar li:hover .sub-bar2 ul li {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: -10px;
-    margin-right: -10px;
-    border-radius: 0;
-    text-align: center;
-    width: 160px;
+    margin-left: 15px;
 }
 
 
