@@ -166,7 +166,7 @@ a#indexhome {
 
 #navbar li a:hover, /* hover: 네비탭 마우스 가져가면 색 변하는 거*/
 #navbar li a.active {  /*active: 네비탭 현재 선택된 페이지에서 상태 변화 */
-    color: #810808;
+    color: #083c81;
 }
 
 #navbar li a.active::after,
@@ -294,13 +294,13 @@ a#indexhome {
 }
 
 #close{
-    display: none;
+    display: flex;
 }
 
 /* Index Page*/
 #hero{
     background-image: url("/img/hero.jpg");
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: top 25% right 0;
@@ -343,14 +343,14 @@ a#indexhome {
     flex-wrap: wrap;
 }
 
-#product1 .pro{
+#product1 .pro {
     width: 23%;
-    min-width: 250px;
+    min-width: 400px;
     padding: 10px 12px;
     border: 1px solid #dfdcd3;
     border-radius: 25px;
     cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
     margin: 15px 0;
     transition: 0.2s ease;
     position: relative;
