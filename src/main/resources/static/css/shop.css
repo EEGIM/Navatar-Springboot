@@ -130,6 +130,22 @@ body {
     margin: 0 20px 0 20px;
 }
 
+#indextab {
+    display: none;
+}
+
+
+#header .index-header-icon {
+    display: flex;
+}
+
+#header .index-header-icon i {
+    display:flex;
+    font-size: 40px;
+    color: #575757;
+    margin: 0 20px 0 20px;
+}
+
 #header .shop-name h3{
     display: flex;
     font-size: 42px;
