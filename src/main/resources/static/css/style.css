@@ -417,15 +417,15 @@ footer .copyright{
 
 /* Single Product */
 #prodetails .single-pro-image{
-    width: 50%;
-    margin-right: 50px;
-    padding-left: 50px;
+    width: 100%;
+    margin-right: 0;
+    padding-left: 0;
 }
 
 #prodetails .fa-adn{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
     text-align: center;
     border-radius: 50px;
     background-color: #f7f3e7;
@@ -433,8 +433,9 @@ footer .copyright{
     color: #083c81;
     border: 1px solid #eae4d3;
     position: absolute;
-    top: 222px;
-    margin: 10px 10px;
+    top: 210px;
+    margin: 22px 22px;
+    font-size: 32px;
 
 }
 
@@ -451,12 +452,15 @@ footer .copyright{
 #prodetails{
     display: flex;
     margin-top: 20px;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #prodetails .single-pro-details{
-    width: 50%;
-    
-    padding-left: 30px;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 0;
 
 }
 
@@ -501,9 +505,13 @@ footer .copyright{
 
 }
 
+#prodetails .single-pro-details .table .tbody tr th span {
+    font-size: 25px;
+}
+
 #prodetails .single-pro-details table {
     margin-top: 20px;
-    /* max-width: 325px; */
+    max-width: 800px;
     border-collapse: separate;
     border-spacing: 0 29px;
 }
@@ -513,9 +521,9 @@ footer .copyright{
     height: 21px;
     vertical-align: middle;
     display: table-cell;
-    width: 100px;
+    width: 230px;
     text-align: left;
-    font-size: 28px;
+    font-size: 32px;
 }
 
 #prodetails .single-pro-details table td {
@@ -527,10 +535,11 @@ footer .copyright{
 
 
 #prodetails .single-pro-details .proBtn{
-    display: block;
+    display: flex;
     margin-top: 20px;
     box-sizing: border-box;
-    max-width: 300px;
+    max-width: 885px;
+    flex-direction: column;
 }
 
 #prodetails .single-pro-details .proBtn a {
@@ -540,6 +549,8 @@ footer .copyright{
 
 #prodetails .single-pro-details .proBtn .Btn-a {
     background-color: #083c81;
+    height: 80px;
+    font-size: 42px;
 }
 
 #prodetails .single-pro-details .proBtn a {
@@ -554,7 +565,7 @@ footer .copyright{
 }
 
 #prodetails .single-pro-details .proBtn .line1 {
-    margin: 0 0 4px;
+    margin: 0 0 14px;
 }
 
 #prodetails .single-pro-details .proBtn .line2 {
@@ -563,13 +574,13 @@ footer .copyright{
 
 #prodetails .single-pro-details .proBtn .line2 .cart_Btn {
     width: 100%;
-    padding-right: 2px;
+    padding-right: 7px;
 }
 
 
 #prodetails .single-pro-details .proBtn .line2 .wish_Btn {
     width: 100%;
-    padding-left: 2px;
+    padding-left: 7px;
 }
 
 #prodetails .single-pro-details button .normal{
