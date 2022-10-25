@@ -419,6 +419,7 @@ footer .copyright{
 #prodetails{
     display: flex;
     margin-top: 20px;
+    justify-content: center;
 }
 
 #prodetails .single-pro-details{
