@@ -96,14 +96,14 @@ body {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #000000;
+    color: #575757;
     transition: 0.3s ease; /*네비탭 마우스 가져갔을 때 색 부드럽게 바뀌게 설정*/
     padding-bottom: 20px;
 }
 
 #navbar li a:hover, /* hover: 네비탭 마우스 가져가면 색 변하는 거*/
 #navbar li a.active {  /*active: 네비탭 현재 선택된 페이지에서 상태 변화 */
-    color: #810808;
+    color: #083c81;
 }
 
 #navbar li a.active::after,
