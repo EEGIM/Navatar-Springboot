@@ -424,7 +424,7 @@ footer .copyright{
 #prodetails .single-pro-details{
     width: 50%;
     padding-top: 10px;
-    padding-left: 30px;
+    padding-left: 100px;
 
 }
 
@@ -478,12 +478,13 @@ footer .copyright{
 
 
 #prodetails .single-pro-details table th {
-    height: 21px;
+    height: 25px;
     vertical-align: middle;
     display: table-cell;
-    width: 100px;
+    width: 120px;
     text-align: left;
     font-size: 32px;
+    font-weight: 600;
 }
 
 #prodetails .single-pro-details table td {
@@ -491,6 +492,7 @@ footer .copyright{
     vertical-align: middle;
     width: auto;
     font-size: 28px;
+    font-weight: 500;
 }
 
 
