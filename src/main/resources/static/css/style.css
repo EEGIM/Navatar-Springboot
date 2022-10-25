@@ -420,6 +420,7 @@ footer .copyright{
     display: flex;
     margin-top: 20px;
     justify-content: center;
+    margin-bottom: 80px;
 }
 
 #prodetails .single-pro-details{
@@ -573,6 +574,10 @@ footer .copyright{
 
 #prodetails2 h2{
     text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 /* product 상세 페이지 location area */
