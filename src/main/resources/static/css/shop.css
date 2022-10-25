@@ -289,7 +289,7 @@ body {
 .location{
     /*background: #083c81;*/
     display: flex;
-    
+    margin-left: 20px;
     margin-top: 60px;
 
 }
