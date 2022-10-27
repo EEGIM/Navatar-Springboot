@@ -8,6 +8,15 @@ var main = {
             _this.cart();
         });
     },
+    size: function(){
+        $.ajax({
+        type: 'POST',
+        url: window.location.pathname+"/findsize",
+        async: false,
+        success: function(){
+        }
+        })
+    },
     likes : function(){
         $.ajax({
         type:'POST',

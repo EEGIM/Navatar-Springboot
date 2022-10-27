@@ -21,7 +21,6 @@ public class CartService {
         CartDto cartDto = requestDto;
         cartDto.setUserNo(userNo);
         cartDto.setProduct(productRepository.findByProductNo(productNo));
-
         cartRepository.save(cartDto.toEntity());
     }
 
