@@ -7,11 +7,17 @@ var main = {
         $('.cart_Btn').on('click', function(){
             _this.cart();
         });
+        $('.size_Bn').on('click', function(){
+            _this.size();
+        });
     },
     size: function(){
+        var formData = $('#sizeForm').serialize();
+
         $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: window.location.pathname+"/findsize",
+        data: formData,
         async: false,
         success: function(){
         }

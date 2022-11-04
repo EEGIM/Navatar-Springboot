@@ -93,9 +93,19 @@ public class ProductService {
     }
 
     @Transactional
-    public List<SatisfactionByProductDto> getProductSatisfaction(Long productNo, int height, int weight){
-        List<ProductSatisfactionDto> satisfactions = satisfactionRepository.getProductSatisfaction(productNo);
-       // List<ProductSatisfactionDto> satisfactions = satisfactionRepository.getProductSatisfaction(productNo, height, weight);
+    public List<SatisfactionByProductDto> getProductSatisfaction(Long productNo){
+        return getProductSatisfactionList(satisfactionRepository.getProductSatisfaction(productNo));
+    }
+
+    @Transactional
+    public List<SatisfactionByProductDto> getProductSatisfaction(Long productNo, Long height, Long weight){
+        if (height == null || height == 0L || weight == null || weight == 0L)
+            return getProductSatisfactionList(satisfactionRepository.getProductSatisfaction(productNo));
+
+        return getProductSatisfactionList(satisfactionRepository.getProductSatisfactionByUserSize(productNo, height, weight));
+    }
+
+    public List<SatisfactionByProductDto> getProductSatisfactionList(List<ProductSatisfactionDto> satisfactions){
         List<SatisfactionByProductDto> satisfactionRates = new ArrayList<>();
         float satisfactionSum = 0.0f;
 
