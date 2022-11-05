@@ -31,6 +31,9 @@ public class ProductController {
             model.addAttribute("weightvalue", weight);
         }}
 
+        height = 0L;
+        weight = 0L;
+
         return "product";
     }
 

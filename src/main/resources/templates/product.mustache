@@ -148,9 +148,6 @@
     <div class="contentBx" id="size-satisfaction">
         <div class="formBx">
             <h2>체형별 사이즈 만족도</h2>
-            {{#sizevalue}}
-                <span>전체 체형에 대한 결과 값 입니다.</span>
-            {{/sizevalue}}
             <form id="sizeForm" action="/findsize/{{productNo}}" method="POST">
                 <div class="inputBx">
                     <span>키 :  </span>
@@ -160,6 +157,9 @@
                     <input class="size_Btn" type="submit" value="확인" />
                 </div>
             </form>
+            {{#sizevalue}}
+                <span>전체 체형에 대한 결과 값 입니다.</span>
+            {{/sizevalue}}
         </div>
         <div class="tableBx">
             <table class="sizetable">
